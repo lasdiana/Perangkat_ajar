@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Perangkat Ajar Terpadu FINAL SEMPURNA + BUKU - B. Indonesia Kelas 7 | SMPN 2 Cipongkor</title>
+<title>Perangkat Ajar Terpadu  + BUKU - B. Indonesia Kelas 7 | SMPN 2 Cipongkor</title>
 <style>
 body{font-family:'Times New Roman',Times,serif;font-size:12pt;margin:0;background:#e8e8e8;color:#000}
 .toolbar{background:#1565c0;color:#fff;padding:12px;text-align:center;position:sticky;top:0;z-index:10;font-family:Arial}
@@ -50,13 +50,13 @@ body{background:#fff}
 </style></head>
 <body>
 <div class="toolbar">
-<b>PERANGKAT AJAR TERPADU FINAL SEMPURNA + BUKU - B. INDONESIA KELAS 7 - SMPN 2 CIPONGKOR</b><br>
+<b>PERANGKAT AJAR TERPADU + BUKU - B. INDONESIA KELAS 7 - SMPN 2 CIPONGKOR</b><br>
 <button id="t1" class="on" onclick="show(1)">🔍 CARI TOPIK / BAB</button><button id="t2" onclick="show(2)">CP</button><button id="t3" onclick="show(3)">ATP</button><button id="t4" onclick="show(4)">PROTA</button><button id="t5" onclick="show(5)">PROMES</button><button id="t6" onclick="show(6)">KKTP</button><button id="t7" onclick="show(7)">📝 MODUL AJAR</button><button id="t8" onclick="show(8)">📄 LKPD</button><button id="t9" onclick="show(9)">📋 KISI-KISI</button><button id="t10" onclick="show(10)">🏦 BANK SOAL</button><button id="t11" onclick="show(11)">📓 JURNAL HARIAN</button><button id="t12" onclick="show(12)">📖 JURNAL PELAJARAN</button><button id="t13" onclick="show(13)">📚 BUKU ELEKTRONIK</button><br>
-<span style="font-size:12px">Guru: Hari Lasdiana, S.Pd - NIP. 1987041420252111118 | Kepsek: Sumaroto, M.Pd | 2026/2027 | Buku: B. Indonesia VII Edisi Revisi 2023</span>
+<span style="font-size:12px"></span>
 </div>
 <div class="wrap">
 <div id="p1" class="box">
-<div class="cover"><h1 style="font-size:22pt;margin:4px">PERANGKAT AJAR TERPADU</h1><h2 style="font-size:18pt;margin:4px">BAHASA INDONESIA KELAS VII</h2><p style="font-size:14pt"><b>SMPN 2 CIPONGKOR</b><br>Kabupaten Bandung Barat<br>Tahun Pelajaran 2026/2027<br><br>Disusun Oleh:<br><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118<br><br>Mengetahui,<br><b>Sumaroto, M.Pd</b><br>NIP. 197208211998031003</p><p style="font-size:11pt">Isi: CP - ATP - PROTA - PROMES - KKTP - Modul Ajar - LKPD - Kisi-Kisi - Bank Soal - Jurnal Harian - Jurnal Pelajaran - Buku Elektronik<br>Semua dalam 1 File. Cari Topik di bawah, klik Subtopik, langsung jadi Modul + LKPD.</p></div>
+<div class="cover"><h1 style="font-size:22pt;margin:4px">PERANGKAT AJAR TERPADU</h1><h2 style="font-size:18pt;margin:4px">BAHASA INDONESIA KELAS VII</h2><p style="font-size:14pt"><b>SMPN 2 CIPONGKOR</b><br>Kabupaten Bandung Barat<br>Tahun Pelajaran 2026/2027<br><br>Disusun Oleh:<br><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118<br><br>Mengetahui,<br><b>Ading Rosidi, S.Pd</b><br>NIP. 196808101998021003</p><p style="font-size:11pt">Isi: CP - ATP - PROTA - PROMES - KKTP - Modul Ajar - LKPD - Kisi-Kisi - Bank Soal - Jurnal Harian - Jurnal Pelajaran - Buku Elektronik<br>Semua dalam 1 File. Cari Topik di bawah, klik Subtopik, langsung jadi Modul + LKPD.</p></div>
 <div class="searchbar">
 <label><b>🔍 Cari Topik Sesuai Buku Paket:</b></label>
 <input id="cari" placeholder="Ketik di sini... Contoh: berita palsu / puisi / surat / prosedur / deskripsi / Itam" oninput="renderCari()">
@@ -87,7 +87,7 @@ body{background:#fff}
 <div class="cek" id="cekIntegrasi"></div>
 <p id="modulInfo"></p>
 Bab: <select id="bab" onchange="renderModul();renderLKPD()"></select>
-Kelas: <select id="kelas"><option>VII A</option><option>VII B</option><option>VII C</option><option selected>VII D</option></select>
+Kelas: <select id="kelas"><option>VII</select>
 Subtopik Buku: <select id="subtopik" onchange="renderModul();renderLKPD()"></select>
 Pertemuan: <select id="pertemuan" onchange="renderModul()"><option value="all">Semua Pertemuan (1 Modul Lengkap)</option><option value="1">Pertemuan 1 Saja</option><option value="2">Pertemuan 2 Saja</option><option value="3">Pertemuan 3 Saja</option><option value="4">Pertemuan 4 Saja</option><option value="5">Pertemuan 5 Saja</option><option value="6">Pertemuan 6 Saja</option></select>
 <button class="btn b2" onclick="cetak()">🖨️ CETAK MODUL AJAR</button>
@@ -121,7 +121,7 @@ Jenis: <select id="jenisBank" onchange="renderBank()"><option value="pg">Pilihan
 <h3>📓 JURNAL HARIAN - B. Indonesia Kelas 7 - SMPN 2 Cipongkor - Hari Lasdiana, S.Pd</h3>
 <div class="jurnal-form">
 <label>Tanggal:</label><input type="date" id="jhTanggal">
-<label>Kelas:</label><select id="jhKelas"><option>VII A</option><option>VII B</option><option>VII C</option><option selected>VII D</option></select>
+<label>Kelas:</label><select id="jhKelas"><option>VII</select>
 <label>Jam:</label><input type="text" id="jhJam" placeholder="Contoh: 07.30 - 09.00">
 <label>Bab / Materi:</label><select id="jhBab"></select>
 <label>Materi yang diajarkan:</label><input type="text" id="jhMateri" placeholder="Contoh: Bab 4 - E. Menelisik Berita Palsu hal. 139">
@@ -133,13 +133,13 @@ Jenis: <select id="jenisBank" onchange="renderBank()"><option value="pg">Pilihan
 </div>
 <button class="btn b2" onclick="simpanJurnalHarian()">💾 SIMPAN JURNAL HARIAN INI</button> <button class="btn b1" onclick="cetakJurnalHarian()">🖨️ CETAK JURNAL HARIAN</button>
 <div id="listJurnalHarian" style="margin-top:12px"></div>
-<div class="ttd"><div>Mengetahui,<br>Kepala Sekolah<br><div class="garis"></div><b>Sumaroto, M.Pd</b><br>NIP. 197208211998031003</div><div>Cipongkor, ....................<br>Guru Mata Pelajaran<br><div class="garis"></div><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118</div></div>
+<div class="ttd"><div>Mengetahui,<br>Kepala Sekolah<br><div class="garis"></div><b>Ading Rosidi, S.Pd</b><br>NIP. 196808101998021003</div><div>Cipongkor, ....................<br>Guru Mata Pelajaran<br><div class="garis"></div><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118</div></div>
 </div>
 <div id="p12" class="box" style="display:none">
 <h3>📖 JURNAL PELAJARAN / REFLEKSI - Per Pertemuan</h3>
 <div class="jurnal-form">
 <label>Tanggal:</label><input type="date" id="jpTanggal">
-<label>Kelas:</label><select id="jpKelas"><option>VII A</option><option>VII B</option><option>VII C</option><option selected>VII D</option></select>
+<label>Kelas:</label><select id="jpKelas"><option>VII</select>
 <label>Pertemuan Ke:</label><select id="jpPert"><option>Pertemuan 1</option><option>Pertemuan 2</option><option>Pertemuan 3</option><option>Pertemuan 4</option><option>Pertemuan 5</option><option>Pertemuan 6</option></select>
 <label>Bab / Subtopik:</label><select id="jpBab"></select>
 <label>✅ Apa yang SUDAH tercapai hari ini:</label><input type="text" id="jpCapai" placeholder="Contoh: Anak sudah bisa membedakan berita benar dan hoaks">
@@ -410,7 +410,7 @@ document.getElementById('paper').innerHTML=`
 <h4>F. LANGKAH-LANGKAH PEMBELAJARAN BERDIFERENSIASI - SESUAI PROMES ${d.promes}</h4>${ph}
 <h4>G. ASESMEN PEMBELAJARAN - TERINTEGRASI KKTP & LKPD</h4><p><b>ASESMEN DIAGNOSTIK:</b> Tanya jawab awal + tabel Saya Sudah Tahu / Saya Belum Tahu. <b>ASESMEN FORMATIF:</b> Tanya jawab, diskusi kelompok, LKPD, observasi. <b>LKPD:</b> ${d.lkpd} - <b>Lihat LKPD lengkap di tombol LKPD, 1 LKPD untuk 1 Subtopik, 5 soal + kotak jawaban.</b> <b>ASESMEN SUMATIF:</b> Produk tulisan + presentasi kinerja + tes tertulis.</p><p><b>KKTP:</b></p><table><tr><th>Persentase</th><th>Kategori</th><th>Tindak Lanjut</th></tr><tr><td>0-40%</td><td>Belum Mencapai</td><td>Remidi total</td></tr><tr><td>41-65%</td><td>Belum Tuntas</td><td>Remidi sebagian</td></tr><tr><td>66-85%</td><td>Sudah Tuntas</td><td>Lanjut ke ATP berikutnya</td></tr><tr><td>86-100%</td><td>Sudah Tuntas</td><td>Pengayaan</td></tr></table><p><b>Batas Tuntas = 66%.</b></p>
 <div class="lampiran"><h4>LAMPIRAN: LKPD & RUBRIK - ${sub.t} - DINILAI DENGAN KKTP 66%</h4><p>${d.lkpd}</p><p><b>Soal LKPD Subtopik ini (lengkap di halaman LKPD):</b></p><ol>${sub.q.map(q=>`<li>${q}</li>`).join('')}</ol><table><tr><th>Aspek</th><th>Skor</th><th>Kriteria</th></tr><tr><td>Isi / Gagasan</td><td>40</td><td>Sesuai topik, lengkap, logis, kritis</td></tr><tr><td>Struktur</td><td>30</td><td>Sesuai struktur teks</td></tr><tr><td>Bahasa</td><td>20</td><td>Kata konkret, kalimat perincian, majas, santun</td></tr><tr><td>Ejaan & Kaidah</td><td>10</td><td>Huruf kapital, tanda baca, kata depan benar</td></tr><tr><td><b>Total</b></td><td><b>100</b></td><td>KKTP 66% = Tuntas, di bawah 66 = Remidi</td></tr></table><p>Nama Siswa: ............................ Kelas: ............ Nilai: ............ KKTP: ☐ Tuntas ☐ Remidi ☐ Pengayaan &nbsp; Paraf Guru: ............</p></div>
-<div class="ttd"><div>Mengetahui,<br>Kepala Sekolah<br><div class="garis"></div><b>Sumaroto, M.Pd</b><br>NIP. 197208211998031003</div><div>Cipongkor, ... Juli 2026<br>Guru Mata Pelajaran<br><div class="garis"></div><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118</div></div>`;
+<div class="ttd"><div>Mengetahui,<br>Kepala Sekolah<br><div class="garis"></div><b>Ading Rosidi, S.Pd</b><br>NIP. 196808101998021003</div><div>Cipongkor, ... Juli 2026<br>Guru Mata Pelajaran<br><div class="garis"></div><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118</div></div>`;
 document.getElementById('kelas').onchange=renderModul;
 }
 document.getElementById('babATP').innerHTML=BAB.map((b,i)=>`<option value="${i}">${b.j}</option>`).join('');
