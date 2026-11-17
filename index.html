@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Perangkat Ajar Terpadu - B. Indonesia Kelas 7 | SMPN 2 Cipongkor</title>
+<title>Perangkat Ajar Terpadu FINAL SEMPURNA + BUKU - B. Indonesia Kelas 7 | SMPN 2 Cipongkor</title>
 <style>
 body{font-family:'Times New Roman',Times,serif;font-size:12pt;margin:0;background:#e8e8e8;color:#000}
 .toolbar{background:#1565c0;color:#fff;padding:12px;text-align:center;position:sticky;top:0;z-index:10;font-family:Arial}
@@ -34,13 +34,15 @@ body{font-family:'Times New Roman',Times,serif;font-size:12pt;margin:0;backgroun
 .lkpd-jawab{border:2px solid #000;border-radius:14px;background:linear-gradient(#e8e8e8,#d0d0d0);min-height:85px;margin:8px 0 16px;padding:10px}
 .lkpd-soal{margin:6px 0 2px;font-weight:bold}
 .upload{border:2px dashed #1565c0;border-radius:10px;padding:12px;margin-top:14px;background:#e3f2fd}
+.jurnal-form label{display:block;font-weight:bold;margin:10px 0 4px}.jurnal-form input,.jurnal-form select{margin-bottom:2px}
+.cover{text-align:center;padding:40px 20px;border:3px double #1565c0;border-radius:12px;background:linear-gradient(#e3f2fd,#fff);margin:16px auto}
 @media print{
 @page{size:A4;margin:15mm}
 body{background:#fff}
 .toolbar,.searchbar{display:none!important}
 .wrap{max-width:none;padding:0;margin:0}
 .wrap .box{display:none!important}
-#modulBox,#p7,#lkpdBox,#p8,#p9,#p10{display:block!important}
+#modulBox,#p7,#lkpdBox,#p8,#p9,#p10,#p11,#p12,#p13{display:block!important}
 .paper,.lkpd-paper{display:block!important;box-shadow:none;margin:0;padding:0;max-width:none;min-height:auto;border:none}
 .lkpd-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .upload{display:none!important}
@@ -48,12 +50,13 @@ body{background:#fff}
 </style></head>
 <body>
 <div class="toolbar">
-<b>PERANGKAT AJAR TERPADU - B. INDONESIA KELAS 7 - SMPN 2 CIPONGKOR</b><br>
-<button id="t1" class="on" onclick="show(1)">🔍 CARI TOPIK / BAB</button><button id="t2" onclick="show(2)">CP</button><button id="t3" onclick="show(3)">ATP</button><button id="t4" onclick="show(4)">PROTA</button><button id="t5" onclick="show(5)">PROMES</button><button id="t6" onclick="show(6)">KKTP</button><button id="t7" onclick="show(7)">📝 MODUL AJAR</button><button id="t8" onclick="show(8)">📄 LKPD</button><button id="t9" onclick="show(9)">📋 KISI-KISI</button><button id="t10" onclick="show(10)">🏦 BANK SOAL</button><br>
+<b>PERANGKAT AJAR TERPADU FINAL SEMPURNA + BUKU - B. INDONESIA KELAS 7 - SMPN 2 CIPONGKOR</b><br>
+<button id="t1" class="on" onclick="show(1)">🔍 CARI TOPIK / BAB</button><button id="t2" onclick="show(2)">CP</button><button id="t3" onclick="show(3)">ATP</button><button id="t4" onclick="show(4)">PROTA</button><button id="t5" onclick="show(5)">PROMES</button><button id="t6" onclick="show(6)">KKTP</button><button id="t7" onclick="show(7)">📝 MODUL AJAR</button><button id="t8" onclick="show(8)">📄 LKPD</button><button id="t9" onclick="show(9)">📋 KISI-KISI</button><button id="t10" onclick="show(10)">🏦 BANK SOAL</button><button id="t11" onclick="show(11)">📓 JURNAL HARIAN</button><button id="t12" onclick="show(12)">📖 JURNAL PELAJARAN</button><button id="t13" onclick="show(13)">📚 BUKU ELEKTRONIK</button><br>
 <span style="font-size:12px">Guru: Hari Lasdiana, S.Pd - NIP. 1987041420252111118 | Kepsek: Sumaroto, M.Pd | 2026/2027 | Buku: B. Indonesia VII Edisi Revisi 2023</span>
 </div>
 <div class="wrap">
 <div id="p1" class="box">
+<div class="cover"><h1 style="font-size:22pt;margin:4px">PERANGKAT AJAR TERPADU</h1><h2 style="font-size:18pt;margin:4px">BAHASA INDONESIA KELAS VII</h2><p style="font-size:14pt"><b>SMPN 2 CIPONGKOR</b><br>Kabupaten Bandung Barat<br>Tahun Pelajaran 2026/2027<br><br>Disusun Oleh:<br><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118<br><br>Mengetahui,<br><b>Sumaroto, M.Pd</b><br>NIP. 197208211998031003</p><p style="font-size:11pt">Isi: CP - ATP - PROTA - PROMES - KKTP - Modul Ajar - LKPD - Kisi-Kisi - Bank Soal - Jurnal Harian - Jurnal Pelajaran - Buku Elektronik<br>Semua dalam 1 File. Cari Topik di bawah, klik Subtopik, langsung jadi Modul + LKPD.</p></div>
 <div class="searchbar">
 <label><b>🔍 Cari Topik Sesuai Buku Paket:</b></label>
 <input id="cari" placeholder="Ketik di sini... Contoh: berita palsu / puisi / surat / prosedur / deskripsi / Itam" oninput="renderCari()">
@@ -65,7 +68,7 @@ body{background:#fff}
 <div id="hasilCari"></div>
 </div>
 <div id="p2" class="box" style="display:none"><h3>CP - Capaian Pembelajaran Fase D (BSKAP 046/H/KR/2025)</h3><p>8 Dimensi Profil Lulusan: Keimanan & Ketakwaan, Kewargaan, Kreativitas, Penalaran Kritis, Kolaborasi, Kemandirian, Kesehatan, Komunikasi.</p><table><tr><th>Elemen</th><th>Pada Akhir Fase D</th></tr><tr><td><b>Menyimak</b></td><td>Menganalisis gagasan dari teks nonsastra aural; dan unsur intrinsik teks sastra aural.</td></tr><tr><td><b>Membaca & Memirsa</b></td><td>Menganalisis informasi dari teks visual/audiovisual untuk makna tersurat & tersirat; menginterpretasi untuk kepedulian / pro-kontra.</td></tr><tr><td><b>Berbicara & Mempresentasikan</b></td><td>Mempresentasikan gagasan untuk pengajuan usul & solusi dalam monolog, dialog logis, berbagai tipe teks secara kritis & kreatif.</td></tr><tr><td><b>Menulis</b></td><td>Menulis gagasan dalam berbagai tipe teks secara logis, kritis, kreatif, menarik, indah; menggunakan kosakata denotatif, konotatif, kiasan.</td></tr></table>
-<div class="upload"><b>📤 Upload File Baru / Revisi - CP</b><br><span style="font-size:12px">Kalau ada CP terbaru, upload di sini saja Bu, tidak perlu bongkar file. Bisa PDF / Word / Excel / Foto.</span><br><br><input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" onchange="uploadFile('CP',this)"><div id="list-CP" style="margin-top:8px"></div></div>
+<div class="upload"><b>📤 Upload File Baru / Revisi - CP</b><br><span style="font-size:12px">Kalau ada CP terbaru, upload di sini saja Bu. Bisa PDF / Word / Excel / Foto.</span><br><br><input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" onchange="uploadFile('CP',this)"><div id="list-CP" style="margin-top:8px"></div></div>
 </div>
 <div id="p3" class="box" style="display:none"><h3>ATP - 63 ATP - Sudah masuk ke Tujuan Pembelajaran di Modul Ajar</h3><select id="babATP" onchange="renderATP()"></select><div id="atpList"></div>
 <div class="upload"><b>📤 Upload File Baru / Revisi - ATP</b><br><span style="font-size:12px">Kalau ATP-nya berubah, upload di sini saja.</span><br><br><input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" onchange="uploadFile('ATP',this)"><div id="list-ATP" style="margin-top:8px"></div></div>
@@ -89,6 +92,7 @@ Subtopik Buku: <select id="subtopik" onchange="renderModul();renderLKPD()"></sel
 Pertemuan: <select id="pertemuan" onchange="renderModul()"><option value="all">Semua Pertemuan (1 Modul Lengkap)</option><option value="1">Pertemuan 1 Saja</option><option value="2">Pertemuan 2 Saja</option><option value="3">Pertemuan 3 Saja</option><option value="4">Pertemuan 4 Saja</option><option value="5">Pertemuan 5 Saja</option><option value="6">Pertemuan 6 Saja</option></select>
 <button class="btn b2" onclick="cetak()">🖨️ CETAK MODUL AJAR</button>
 <button class="btn b3" onclick="show(8);renderLKPD()">📄 LIHAT LKPD SUBTOPIK INI</button>
+<button class="btn b1" onclick="cetakSemua()">🖨️ CETAK SEMUA (Modul + LKPD + Kisi-Kisi)</button>
 <div class="paper" id="paper"></div>
 </div>
 <div id="p8" class="box" style="display:none" id="lkpdBox">
@@ -112,6 +116,61 @@ Jenis: <select id="jenisBank" onchange="renderBank()"><option value="pg">Pilihan
 <button class="btn b2" onclick="cetakBank()">🖨️ CETAK BANK SOAL INI</button>
 <label><input type="checkbox" id="tampilKunci" checked onchange="renderBank()"> Tampilkan Kunci Jawaban (kalau mau print untuk siswa, matikan ini)</label></p>
 <div id="bankPaper" class="paper" style="min-height:auto"></div>
+</div>
+<div id="p11" class="box" style="display:none">
+<h3>📓 JURNAL HARIAN - B. Indonesia Kelas 7 - SMPN 2 Cipongkor - Hari Lasdiana, S.Pd</h3>
+<div class="jurnal-form">
+<label>Tanggal:</label><input type="date" id="jhTanggal">
+<label>Kelas:</label><select id="jhKelas"><option>VII A</option><option>VII B</option><option>VII C</option><option selected>VII D</option></select>
+<label>Jam:</label><input type="text" id="jhJam" placeholder="Contoh: 07.30 - 09.00">
+<label>Bab / Materi:</label><select id="jhBab"></select>
+<label>Materi yang diajarkan:</label><input type="text" id="jhMateri" placeholder="Contoh: Bab 4 - E. Menelisik Berita Palsu hal. 139">
+<label>Hadir (jumlah):</label><input type="number" id="jhHadir" placeholder="Contoh: 30">
+<label>Tidak Hadir (jumlah):</label><input type="number" id="jhTidak" placeholder="Contoh: 2">
+<label>Nama yang tidak hadir:</label><input type="text" id="jhNamaTidak" placeholder="Contoh: Andi, Budi - sakit">
+<label>Catatan / Kendala:</label><input type="text" id="jhCatatan" placeholder="Contoh: 5 anak belum paham ciri hoaks, perlu remedial besok">
+<label>Tindak Lanjut:</label><input type="text" id="jhTindak" placeholder="Contoh: Ulangi materi hoaks 15 menit + beri latihan tambahan">
+</div>
+<button class="btn b2" onclick="simpanJurnalHarian()">💾 SIMPAN JURNAL HARIAN INI</button> <button class="btn b1" onclick="cetakJurnalHarian()">🖨️ CETAK JURNAL HARIAN</button>
+<div id="listJurnalHarian" style="margin-top:12px"></div>
+<div class="ttd"><div>Mengetahui,<br>Kepala Sekolah<br><div class="garis"></div><b>Sumaroto, M.Pd</b><br>NIP. 197208211998031003</div><div>Cipongkor, ....................<br>Guru Mata Pelajaran<br><div class="garis"></div><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118</div></div>
+</div>
+<div id="p12" class="box" style="display:none">
+<h3>📖 JURNAL PELAJARAN / REFLEKSI - Per Pertemuan</h3>
+<div class="jurnal-form">
+<label>Tanggal:</label><input type="date" id="jpTanggal">
+<label>Kelas:</label><select id="jpKelas"><option>VII A</option><option>VII B</option><option>VII C</option><option selected>VII D</option></select>
+<label>Pertemuan Ke:</label><select id="jpPert"><option>Pertemuan 1</option><option>Pertemuan 2</option><option>Pertemuan 3</option><option>Pertemuan 4</option><option>Pertemuan 5</option><option>Pertemuan 6</option></select>
+<label>Bab / Subtopik:</label><select id="jpBab"></select>
+<label>✅ Apa yang SUDAH tercapai hari ini:</label><input type="text" id="jpCapai" placeholder="Contoh: Anak sudah bisa membedakan berita benar dan hoaks">
+<label>❌ Apa yang BELUM tuntas:</label><input type="text" id="jpBelum" placeholder="Contoh: 5 anak belum bisa menulis berita eksplanasi">
+<label>👦 Anak yang perlu perhatian khusus:</label><input type="text" id="jpAnak" placeholder="Contoh: Siti - belum berani presentasi, Andi - belum kumpul LKPD">
+<label>📝 Rencana besok:</label><input type="text" id="jpRencana" placeholder="Contoh: Besok ulangi menulis berita 20 menit, lalu podcast">
+</div>
+<button class="btn b2" onclick="simpanJurnalPelajaran()">💾 SIMPAN JURNAL PELAJARAN INI</button> <button class="btn b1" onclick="cetakJurnalPelajaran()">🖨️ CETAK JURNAL PELAJARAN</button>
+<div id="listJurnalPelajaran" style="margin-top:12px"></div>
+</div>
+<div id="p13" class="box" style="display:none">
+<h3>📚 BUKU ELEKTRONIK - Bahasa Indonesia Kelas VII Edisi Revisi 2023</h3>
+<p>Buku paket Ibu langsung dibuka dari sini, tidak perlu buka file lain lagi.</p>
+<div style="border:2px dashed #1565c0;border-radius:10px;padding:12px;background:#e3f2fd">
+<b>📤 Upload Buku Paket (PDF) - Cukup 1x saja:</b><br>
+<span style="font-size:12px">Cara paling aman: simpan file PDF buku paket Ibu dengan nama <b>buku-kelas7.pdf</b> di folder yang sama dengan file index.html ini. Atau upload di sini kalau file-nya di bawah 8MB.</span><br><br>
+<input type="file" id="inputBuku" accept=".pdf" onchange="uploadBuku(this)">
+<div id="infoBuku" style="margin-top:8px"></div>
+</div>
+<p style="margin-top:12px"><b>Lompat Cepat ke Bab:</b><br>
+<button class="btn b1" onclick="lompatBuku(1)">Bab 1 - hal. 1</button>
+<button class="btn b1" onclick="lompatBuku(43)">Bab 2 - hal. 43</button>
+<button class="btn b1" onclick="lompatBuku(77)">Bab 3 - hal. 77</button>
+<button class="btn b1" onclick="lompatBuku(115)">Bab 4 - hal. 115</button>
+<button class="btn b1" onclick="lompatBuku(139)">Bab 4 - E. Berita Palsu hal. 139</button>
+<button class="btn b1" onclick="lompatBuku(155)">Bab 5 - hal. 155</button>
+<button class="btn b1" onclick="lompatBuku(193)">Bab 6 - hal. 193</button>
+</p>
+<p>Halaman yang mau dibuka: <input type="number" id="halBuku" value="139" style="width:80px;display:inline-block"> <button class="btn b2" onclick="lompatBuku(document.getElementById('halBuku').value)">➡️ BUKA HALAMAN INI</button> <button class="btn b3" onclick="bukaBukuTabBaru()">🔗 BUKA DI TAB BARU / LAYAR PENUH</button></p>
+<iframe id="viewerBuku" style="width:100%;height:700px;border:2px solid #1565c0;border-radius:10px;background:#f5f5f5" src=""></iframe>
+<p style="font-size:12px;color:#666">Tips Bu: Kalau Ibu mau buku-nya selalu kebuka walau ganti laptop, simpan file PDF-nya dengan nama yang sama dengan file index.html ini, di folder yang sama, namanya <b>buku-kelas7.pdf</b>. Nanti web-nya otomatis cari file itu.</p>
 </div>
 </div>
 <script>
@@ -154,7 +213,7 @@ atp:["Menganalisis informasi surat pribadi & resmi.","Membandingkan unsur, tujua
 lkpd:"1. Bandingkan surat pribadi vs resmi hal.208-211. 2. Analisis pesan WA hal.213-219. 3. Tulis surat resmi ke Kepsek + surat pribadi.",
 pertemuan:[{judul:"PERTEMUAN 1-6 - SESUAI SUBTOPIK BUKU",topik:"Surat Pribadi, Resmi & Media Sosial",isi:`<p><b>PENDAHULUAN:</b> Salam, doa, presensi, apersepsi chat WA. <b>INTI:</b> Mindful: Amati contoh surat & chat. Meaningful: Bandingkan surat hal.208-211, analisis ruang bincang hal.222-228. Joyful: Tulis surat resmi + pesan ajakan peduli lingkungan. <b>PENUTUP:</b> Refleksi, rangkuman, salam & doa.</p>`}]}
 ];
-function show(n){for(let i=1;i<=10;i++){document.getElementById('p'+i).style.display=i==n?'block':'none';document.getElementById('t'+i).className=i==n?'on':'';}}
+function show(n){for(let i=1;i<=13;i++){document.getElementById('p'+i).style.display=i==n?'block':'none';document.getElementById('t'+i).className=i==n?'on':'';}}
 function setCari(v){document.getElementById('cari').value=v;renderCari();}
 function renderCari(){
 let q=(document.getElementById('cari').value||'').toLowerCase();
@@ -193,6 +252,7 @@ function cetak(){show(7);renderModul();setTimeout(function(){window.print();},30
 function cetakLKPD(){show(8);renderLKPD();setTimeout(function(){window.print();},300);}
 function cetakKisi(){show(9);renderKisi();setTimeout(function(){window.print();},300);}
 function cetakBank(){show(10);renderBank();setTimeout(function(){window.print();},300);}
+function cetakSemua(){show(7);renderModul();renderLKPD();renderKisi();setTimeout(function(){window.print();},400);}
 function syncLKPDFromModul(){
 document.getElementById('babLKPD').value=document.getElementById('bab').value;
 let d=BAB[+document.getElementById('babLKPD').value];
@@ -280,6 +340,48 @@ data[bagian].splice(idx,1);
 localStorage.setItem('fileRevisi', JSON.stringify(data));
 tampilFile(bagian);
 }
+function simpanJurnalHarian(){
+let d={tgl:document.getElementById('jhTanggal').value, kelas:document.getElementById('jhKelas').value, jam:document.getElementById('jhJam').value, bab:document.getElementById('jhBab').value, materi:document.getElementById('jhMateri').value, hadir:document.getElementById('jhHadir').value, tidak:document.getElementById('jhTidak').value, namaTidak:document.getElementById('jhNamaTidak').value, catatan:document.getElementById('jhCatatan').value, tindak:document.getElementById('jhTindak').value};
+if(!d.tgl||!d.materi){alert('Isi dulu Bu, Tanggal dan Materi-nya.');return;}
+let arr=JSON.parse(localStorage.getItem('jurnalHarian')||'[]'); arr.unshift(d); localStorage.setItem('jurnalHarian',JSON.stringify(arr)); tampilJurnalHarian(); alert('Berhasil Bu! Jurnal Harian tersimpan.');
+}
+function tampilJurnalHarian(){
+let arr=JSON.parse(localStorage.getItem('jurnalHarian')||'[]');
+document.getElementById('listJurnalHarian').innerHTML = arr.length==0 ? '<p>Belum ada jurnal. Isi di atas lalu klik SIMPAN.</p>' : arr.map((d,i)=>`<div style="border:1px solid #ddd;padding:10px;border-radius:10px;margin:6px 0;background:#f9f9f9"><b>${d.tgl} - ${d.kelas} - Jam ${d.jam}</b><br><b>${d.bab}</b><br>Materi: ${d.materi}<br>Hadir: ${d.hadir} | Tidak Hadir: ${d.tidak} (${d.namaTidak})<br>Catatan: ${d.catatan}<br>Tindak Lanjut: ${d.tindak} <br><a href="#" onclick="hapusJurnalHarian(${i});return false;" style="color:red">🗑️ Hapus</a></div>`).join('');
+}
+function hapusJurnalHarian(i){ if(!confirm('Hapus jurnal ini Bu?')) return; let arr=JSON.parse(localStorage.getItem('jurnalHarian')||'[]'); arr.splice(i,1); localStorage.setItem('jurnalHarian',JSON.stringify(arr)); tampilJurnalHarian(); }
+function cetakJurnalHarian(){ show(11); tampilJurnalHarian(); setTimeout(function(){window.print();},300); }
+function simpanJurnalPelajaran(){
+let d={tgl:document.getElementById('jpTanggal').value, kelas:document.getElementById('jpKelas').value, pert:document.getElementById('jpPert').value, bab:document.getElementById('jpBab').value, capai:document.getElementById('jpCapai').value, belum:document.getElementById('jpBelum').value, anak:document.getElementById('jpAnak').value, rencana:document.getElementById('jpRencana').value};
+if(!d.tgl||!d.capai){alert('Isi dulu Bu, Tanggal dan Apa yang Sudah Tercapai-nya.');return;}
+let arr=JSON.parse(localStorage.getItem('jurnalPelajaran')||'[]'); arr.unshift(d); localStorage.setItem('jurnalPelajaran',JSON.stringify(arr)); tampilJurnalPelajaran(); alert('Berhasil Bu! Jurnal Pelajaran tersimpan.');
+}
+function tampilJurnalPelajaran(){
+let arr=JSON.parse(localStorage.getItem('jurnalPelajaran')||'[]');
+document.getElementById('listJurnalPelajaran').innerHTML = arr.length==0 ? '<p>Belum ada jurnal pelajaran.</p>' : arr.map((d,i)=>`<div style="border:1px solid #ddd;padding:10px;border-radius:10px;margin:6px 0;background:#fff8e1"><b>${d.tgl} - ${d.kelas} - ${d.pert}</b><br><b>${d.bab}</b><br>✅ Tercapai: ${d.capai}<br>❌ Belum Tuntas: ${d.belum}<br>👦 Perhatian Khusus: ${d.anak}<br>📝 Rencana Besok: ${d.rencana} <br><a href="#" onclick="hapusJurnalPelajaran(${i});return false;" style="color:red">🗑️ Hapus</a></div>`).join('');
+}
+function hapusJurnalPelajaran(i){ if(!confirm('Hapus jurnal ini Bu?')) return; let arr=JSON.parse(localStorage.getItem('jurnalPelajaran')||'[]'); arr.splice(i,1); localStorage.setItem('jurnalPelajaran',JSON.stringify(arr)); tampilJurnalPelajaran(); }
+function cetakJurnalPelajaran(){ show(12); tampilJurnalPelajaran(); setTimeout(function(){window.print();},300); }
+let urlBuku = localStorage.getItem('urlBuku') || '';
+function uploadBuku(input){
+let file = input.files[0]; if(!file) return;
+if(file.size > 8000000){ alert('File-nya besar Bu, di atas 8MB. Pakai Cara 1 ya Bu: simpan file PDF-nya dengan nama buku-kelas7.pdf di folder yang sama dengan file index.html ini, lalu refresh.'); return; }
+let reader = new FileReader();
+reader.onload = function(e){ urlBuku = e.target.result; try{ localStorage.setItem('urlBuku', urlBuku); }catch(err){} tampilBuku(); alert('Berhasil Bu! Buku sudah tersimpan. Besok buka lagi di laptop yang sama, buku langsung kebuka.'); };
+reader.readAsDataURL(file);
+}
+function tampilBuku(){
+let v = document.getElementById('viewerBuku'); if(!v) return;
+if(urlBuku){ v.src = urlBuku; document.getElementById('infoBuku').innerHTML = '✅ Buku sudah tersimpan. Tinggal klik tombol Lompat ke Bab di bawah.'; }
+else { v.src = 'buku-kelas7.pdf'; document.getElementById('infoBuku').innerHTML = 'Belum ada buku yang di-upload. Silakan upload di atas, atau simpan file PDF dengan nama <b>buku-kelas7.pdf</b> di folder yang sama.'; }
+}
+function lompatBuku(hal){
+if(!urlBuku && !document.getElementById('viewerBuku').src){ alert('Upload dulu bukunya Bu di atas, baru bisa lompat halaman.'); return; }
+let base = urlBuku ? urlBuku.split('#')[0] : 'buku-kelas7.pdf';
+document.getElementById('viewerBuku').src = base + '#page=' + hal;
+document.getElementById('halBuku').value = hal;
+}
+function bukaBukuTabBaru(){ if(urlBuku){ window.open(urlBuku, '_blank'); } else { window.open('buku-kelas7.pdf', '_blank'); } }
 function renderModul(){
 let bi=+document.getElementById('bab').value;let d=BAB[bi];
 let simpanSub=document.getElementById('subtopik').value;
@@ -292,6 +394,7 @@ document.getElementById('cekIntegrasi').innerHTML=`<b>✅ CEK INTEGRASI - Modul 
 let pil=document.getElementById('pertemuan').value;let list=d.pertemuan;if(pil!=="all")list=[d.pertemuan[+pil-1]];
 let ph=list.map(p=>`<div class="pertemuan"><h4>${p.judul}</h4><p><b>${p.topik}</b></p>${p.isi}</div>`).join('');
 document.getElementById('paper').innerHTML=`
+<div class="cover"><h1>PERANGKAT AJAR TERPADU</h1><h2>BAHASA INDONESIA KELAS VII</h2><p><b>SMPN 2 CIPONGKOR</b><br>Tahun Pelajaran 2026/2027<br><br>Disusun Oleh:<br><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118</p></div>
 <h1>MODUL AJAR DEEP LEARNING</h1><h1>MATA PELAJARAN : BAHASA INDONESIA</h1><h2>${d.j.toUpperCase()}</h2>
 <div class="kotak"><b>KETERKAITAN DOKUMEN - TERINTEGRASI:</b> Modul ini disusun berdasarkan CP Nomor 46 Tahun 2025, dijabarkan dalam ${d.atp.length} ATP Bab ini, sesuai PROTA Semester ${d.sem} Tahun 2026/2027, dilaksanakan pada PROMES ${d.promes}, dan dinilai dengan KKTP Tuntas 66% (lihat Bagian G). Buku sumber: Bahasa Indonesia Kelas VII Edisi Revisi, hal. ${d.hal}.</div>
 <h3>A. IDENTITAS MODUL - TERINTEGRASI PROTA & PROMES</h3><div class="ident"><table><tr><td>Nama Sekolah</td><td>:</td><td><b>SMPN 2 Cipongkor</b></td></tr><tr><td>Nama Penyusun</td><td>:</td><td><b>Hari Lasdiana, S.Pd</b></td></tr><tr><td>Mata Pelajaran</td><td>:</td><td><b>Bahasa Indonesia</b></td></tr><tr><td>Kelas / Fase / Semester</td><td>:</td><td><b>${document.getElementById('kelas').value} / D / ${d.sem} (PROTA)</b></td></tr><tr><td>Alokasi Waktu</td><td>:</td><td><b>${d.jp} (PROTA)</b></td></tr><tr><td>Jadwal Pelaksanaan (PROMES)</td><td>:</td><td><b>${d.promes}</b></td></tr><tr><td>Tahun Pelajaran</td><td>:</td><td><b>2026 / 2027</b></td></tr><tr><td>Buku Sumber</td><td>:</td><td><b>Bahasa Indonesia Kelas VII Edisi Revisi, hal. ${d.hal} - ${d.m}</b></td></tr><tr><td>Subtopik Buku</td><td>:</td><td><b>${sub.t} - hal. ${sub.hal} - ${sub.isi}</b></td></tr></table></div>
@@ -315,6 +418,10 @@ document.getElementById('bab').innerHTML=BAB.map((b,i)=>`<option value="${i}">${
 document.getElementById('babLKPD').innerHTML=BAB.map((b,i)=>`<option value="${i}">${b.j} - ${b.m}</option>`).join('');
 document.getElementById('babKisi').innerHTML=BAB.map((b,i)=>`<option value="${i}">${b.j} - ${b.m}</option>`).join('');
 document.getElementById('babBank').innerHTML=BAB.map((b,i)=>`<option value="${i}">${b.j} - ${b.m}</option>`).join('');
-renderCari();renderATP();renderSubOptions();renderModul();syncLKPDFromModul();renderKisi();renderBank();
+document.getElementById('jhBab').innerHTML=BAB.map(b=>`<option>${b.j} - ${b.m}</option>`).join('');
+document.getElementById('jpBab').innerHTML=BAB.map(b=>`<option>${b.j} - ${b.m}</option>`).join('');
+document.getElementById('jhTanggal').value=new Date().toISOString().slice(0,10);
+document.getElementById('jpTanggal').value=new Date().toISOString().slice(0,10);
+renderCari();renderATP();renderSubOptions();renderModul();syncLKPDFromModul();renderKisi();renderBank();tampilJurnalHarian();tampilJurnalPelajaran();tampilBuku();
 ['CP','ATP','PROTA','PROMES','KKTP'].forEach(b=>tampilFile(b));
 </script></body></html>
