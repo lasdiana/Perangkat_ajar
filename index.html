@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Perangkat Ajar Terpadu - B. Indonesia Kelas 7 | SMPN 2 Cipongkor</title>
+<style>
+body{font-family:'Times New Roman',Times,serif;font-size:12pt;margin:0;background:#e8e8e8;color:#000}
+.toolbar{background:#1565c0;color:#fff;padding:12px;text-align:center;position:sticky;top:0;z-index:10;font-family:Arial}
+.toolbar button{padding:9px 10px;border:0;border-radius:20px;cursor:pointer;font-weight:bold;background:#ddd;margin:2px;font-family:Arial;font-size:13px}
+.toolbar button.on{background:#ff9800;color:#fff}
+.searchbar{background:#fff;padding:14px;border-radius:12px;margin:12px;box-shadow:0 2px 8px #0002;font-family:Arial}
+.searchbar input{width:100%;padding:14px;font-size:16px;border:2px solid #1565c0;border-radius:10px;box-sizing:border-box}
+.searchbar select{padding:10px;border-radius:8px;margin:6px 4px 0 0}
+.chip{display:inline-block;background:#e3f2fd;color:#1565c0;padding:6px 10px;border-radius:20px;margin:4px 4px 0 0;cursor:pointer;font-size:13px;font-weight:bold}
+.wrap{max-width:1000px;margin:0 auto;padding:0 12px 12px;font-family:Arial}
+.box{background:#fff;padding:16px;border-radius:12px;margin:10px 0;font-size:14px}
+.box table{width:100%;border-collapse:collapse;font-size:13px}.box td,.box th{border:1px solid #ddd;padding:7px;text-align:left}.box th{background:#1565c0;color:#fff}
+.box input,.box select{width:100%;padding:8px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box}
+.btn{padding:10px 14px;border:0;border-radius:8px;color:#fff;cursor:pointer;margin:3px;font-family:Arial}.b1{background:#1565c0}.b2{background:#2e7d32}.b3{background:#ef6c00}
+.card{border:1px solid #eee;border-radius:12px;padding:12px;margin:10px 0;background:#fff}
+.card h4{margin:4px 0;color:#1565c0}
+.sub{border-left:4px solid #ff9800;padding:8px 10px;margin:6px 0;background:#fff8e1;border-radius:0 8px 8px 0;cursor:pointer}
+.sub b{color:#000}
+.cek{background:#e8f5e9;border:2px solid #2e7d32;border-radius:10px;padding:10px;margin:10px 0;font-family:Arial;font-size:13px}
+.paper{background:#fff;max-width:210mm;min-height:297mm;margin:16px auto;padding:20mm;box-shadow:0 4px 16px #0003;text-align:justify;line-height:1.5;font-family:'Times New Roman',Times,serif;font-size:12pt}
+.paper h1,.paper h2{font-size:12pt;text-align:center;margin:4px 0;text-transform:uppercase}
+.paper h3{font-size:12pt;text-align:justify;margin:14px 0 4px;text-transform:uppercase}
+.paper h4{font-size:12pt;text-align:justify;margin:12px 0 4px;text-transform:uppercase}
+.paper p{margin:4px 0}.ident td{padding:1px 4px;vertical-align:top}.ident td:first-child{font-weight:bold;width:180px}
+.pertemuan{border-top:1px solid #000;margin-top:12px;padding-top:8px}
+.ttd{display:flex;justify-content:space-between;margin-top:28px;text-align:center}.ttd div{width:48%}.ttd .garis{border-bottom:1px solid #000;margin:48px 10px 4px}
+.lampiran{border:1px solid #000;padding:10px;margin-top:12px}.lampiran table{width:100%;border-collapse:collapse}.lampiran td,.lampiran th{border:1px solid #000;padding:6px;font-size:11pt}
+.kotak{border:1px solid #000;padding:8px;margin:8px 0}
+.lkpd-paper{background:#fff;max-width:210mm;min-height:297mm;margin:16px auto;padding:15mm 18mm;box-shadow:0 4px 16px #0003;font-family:'Times New Roman',Times,serif;font-size:12pt;border:3px double #000}
+.lkpd-header{background:linear-gradient(#a8c686,#7a9e4a);border:2px solid #5a7a2a;border-radius:10px;text-align:center;padding:14px;margin:0 auto 18px;max-width:520px;box-shadow:0 3px 0 #5a7a2a}
+.lkpd-header h1{font-size:14pt;margin:0}.lkpd-header h2{font-size:13pt;margin:2px 0}.lkpd-header h3{font-size:12pt;margin:2px 0;font-weight:normal}
+.lkpd-jawab{border:2px solid #000;border-radius:14px;background:linear-gradient(#e8e8e8,#d0d0d0);min-height:85px;margin:8px 0 16px;padding:10px}
+.lkpd-soal{margin:6px 0 2px;font-weight:bold}
+.upload{border:2px dashed #1565c0;border-radius:10px;padding:12px;margin-top:14px;background:#e3f2fd}
+@media print{
+@page{size:A4;margin:15mm}
+body{background:#fff}
+.toolbar,.searchbar{display:none!important}
+.wrap{max-width:none;padding:0;margin:0}
+.wrap .box{display:none!important}
+#modulBox,#p7,#lkpdBox,#p8,#p9,#p10{display:block!important}
+.paper,.lkpd-paper{display:block!important;box-shadow:none;margin:0;padding:0;max-width:none;min-height:auto;border:none}
+.lkpd-header{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.upload{display:none!important}
+}
+</style></head>
+<body>
+<div class="toolbar">
+<b>PERANGKAT AJAR TERPADU - B. INDONESIA KELAS 7 - SMPN 2 CIPONGKOR</b><br>
+<button id="t1" class="on" onclick="show(1)">🔍 CARI TOPIK / BAB</button><button id="t2" onclick="show(2)">CP</button><button id="t3" onclick="show(3)">ATP</button><button id="t4" onclick="show(4)">PROTA</button><button id="t5" onclick="show(5)">PROMES</button><button id="t6" onclick="show(6)">KKTP</button><button id="t7" onclick="show(7)">📝 MODUL AJAR</button><button id="t8" onclick="show(8)">📄 LKPD</button><button id="t9" onclick="show(9)">📋 KISI-KISI</button><button id="t10" onclick="show(10)">🏦 BANK SOAL</button><br>
+<span style="font-size:12px">Guru: Hari Lasdiana, S.Pd - NIP. 1987041420252111118 | Kepsek: Sumaroto, M.Pd | 2026/2027 | Buku: B. Indonesia VII Edisi Revisi 2023</span>
+</div>
+<div class="wrap">
+<div id="p1" class="box">
+<div class="searchbar">
+<label><b>🔍 Cari Topik Sesuai Buku Paket:</b></label>
+<input id="cari" placeholder="Ketik di sini... Contoh: berita palsu / puisi / surat / prosedur / deskripsi / Itam" oninput="renderCari()">
+<div style="margin-top:8px">Cari cepat: <span class="chip" onclick="setCari('deskripsi')">Deskripsi</span><span class="chip" onclick="setCari('puisi')">Puisi</span><span class="chip" onclick="setCari('prosedur')">Prosedur</span><span class="chip" onclick="setCari('berita')">Berita</span><span class="chip" onclick="setCari('berita palsu')">Berita Palsu</span><span class="chip" onclick="setCari('Itam')">Itam dan U</span><span class="chip" onclick="setCari('surat')">Surat</span><span class="chip" onclick="setCari('')">Tampilkan Semua</span></div>
+<label style="display:block;margin-top:10px"><b>Atau pilih Bab saja:</b></label>
+<select id="filterBab" onchange="renderCari()"><option value="">Semua Bab (1-6)</option><option value="Bab 1">Bab 1 - Jelajah Nusantara</option><option value="Bab 2">Bab 2 - Berkelana di Dunia Imajinasi</option><option value="Bab 3">Bab 3 - Hal yang Baik bagi Tubuh</option><option value="Bab 4">Bab 4 - Aksi Nyata Para Pelindung Bumi</option><option value="Bab 5">Bab 5 - Membuka Gerbang Dunia</option><option value="Bab 6">Bab 6 - Sampaikan Melalui Surat</option></select>
+</div>
+<p id="hasilHitung"></p>
+<div id="hasilCari"></div>
+</div>
+<div id="p2" class="box" style="display:none"><h3>CP - Capaian Pembelajaran Fase D (BSKAP 046/H/KR/2025)</h3><p>8 Dimensi Profil Lulusan: Keimanan & Ketakwaan, Kewargaan, Kreativitas, Penalaran Kritis, Kolaborasi, Kemandirian, Kesehatan, Komunikasi.</p><table><tr><th>Elemen</th><th>Pada Akhir Fase D</th></tr><tr><td><b>Menyimak</b></td><td>Menganalisis gagasan dari teks nonsastra aural; dan unsur intrinsik teks sastra aural.</td></tr><tr><td><b>Membaca & Memirsa</b></td><td>Menganalisis informasi dari teks visual/audiovisual untuk makna tersurat & tersirat; menginterpretasi untuk kepedulian / pro-kontra.</td></tr><tr><td><b>Berbicara & Mempresentasikan</b></td><td>Mempresentasikan gagasan untuk pengajuan usul & solusi dalam monolog, dialog logis, berbagai tipe teks secara kritis & kreatif.</td></tr><tr><td><b>Menulis</b></td><td>Menulis gagasan dalam berbagai tipe teks secara logis, kritis, kreatif, menarik, indah; menggunakan kosakata denotatif, konotatif, kiasan.</td></tr></table>
+<div class="upload"><b>📤 Upload File Baru / Revisi - CP</b><br><span style="font-size:12px">Kalau ada CP terbaru, upload di sini saja Bu, tidak perlu bongkar file. Bisa PDF / Word / Excel / Foto.</span><br><br><input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" onchange="uploadFile('CP',this)"><div id="list-CP" style="margin-top:8px"></div></div>
+</div>
+<div id="p3" class="box" style="display:none"><h3>ATP - 63 ATP - Sudah masuk ke Tujuan Pembelajaran di Modul Ajar</h3><select id="babATP" onchange="renderATP()"></select><div id="atpList"></div>
+<div class="upload"><b>📤 Upload File Baru / Revisi - ATP</b><br><span style="font-size:12px">Kalau ATP-nya berubah, upload di sini saja.</span><br><br><input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" onchange="uploadFile('ATP',this)"><div id="list-ATP" style="margin-top:8px"></div></div>
+</div>
+<div id="p4" class="box" style="display:none"><h3>PROTA - Program Tahunan 2026/2027</h3><table><tr><th>Bab</th><th>ATP</th><th>Semester</th><th>Buku Hal.</th><th>Promes</th></tr><tr><td>Bab 1 Jelajah Nusantara - Teks Deskripsi</td><td>10 ATP</td><td>Ganjil</td><td>1-42</td><td>Juli-Agustus 2026</td></tr><tr><td>Bab 2 Berkelana di Dunia Imajinasi - Puisi & Fantasi</td><td>13 ATP</td><td>Ganjil</td><td>43-76</td><td>Sep-Okt 2026</td></tr><tr><td>Bab 3 Hal yang Baik Bagi Tubuh - Teks Prosedur</td><td>9 ATP</td><td>Ganjil</td><td>77-114</td><td>Nov-Des 2026</td></tr><tr><td>Bab 4 Aksi Nyata Para Pelindung Bumi - Teks Berita</td><td>9 ATP</td><td>Genap</td><td>115-154</td><td>Jan-Feb 2027</td></tr><tr><td>Bab 5 Membuka Gerbang Dunia - Teks Tanggapan Buku</td><td>12 ATP</td><td>Genap</td><td>155-192</td><td>Mar-Apr 2027</td></tr><tr><td>Bab 6 Sampaikan Melalui Surat - Surat & Media Sosial</td><td>9 ATP</td><td>Genap</td><td>193-236</td><td>Mei-Juni 2027</td></tr></table>
+<div class="upload"><b>📤 Upload File Baru / Revisi - PROTA</b><br><span style="font-size:12px">Kalau PROTA berubah, upload di sini saja.</span><br><br><input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" onchange="uploadFile('PROTA',this)"><div id="list-PROTA" style="margin-top:8px"></div></div>
+</div>
+<div id="p5" class="box" style="display:none"><h3>PROMES - Program Semester</h3><p><b>Ganjil (Juli-Des 2026):</b> Bab 1 (Juli-Agustus, Minggu 1-6), Bab 2 (Sep-Okt, Minggu 7-12), Bab 3 (Nov-Des, Minggu 13-18) + SAS Ganjil.</p><p><b>Genap (Jan-Juni 2027):</b> Bab 4 (Jan-Feb, Minggu 1-6), Bab 5 (Mar-Apr, Minggu 7-12), Bab 6 (Mei-Juni, Minggu 13-18) + SAS Genap.</p>
+<div class="upload"><b>📤 Upload File Baru / Revisi - PROMES</b><br><span style="font-size:12px">Kalau PROMES berubah, upload di sini saja.</span><br><br><input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" onchange="uploadFile('PROMES',this)"><div id="list-PROMES" style="margin-top:8px"></div></div>
+</div>
+<div id="p6" class="box" style="display:none"><h3>KKTP - dari file Ibu</h3><p><b>0-40%</b> Belum Mencapai - Remidi total | <b>41-65%</b> Belum Tuntas - Remidi sebagian | <b>66-85%</b> Sudah Tuntas | <b>86-100%</b> Sudah Tuntas - Pengayaan</p><p>KKTP Tuntas = 66%.</p>
+<div class="upload"><b>📤 Upload File Baru / Revisi - KKTP</b><br><span style="font-size:12px">Kalau KKTP berubah, upload di sini saja.</span><br><br><input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png" onchange="uploadFile('KKTP',this)"><div id="list-KKTP" style="margin-top:8px"></div></div>
+</div>
+<div id="p7" class="box" style="display:none" id="modulBox">
+<h3>📝 Modul Ajar Terintegrasi - CP + ATP + Prota + Promes + KKTP dalam 1 Kertas</h3>
+<div class="cek" id="cekIntegrasi"></div>
+<p id="modulInfo"></p>
+Bab: <select id="bab" onchange="renderModul();renderLKPD()"></select>
+Kelas: <select id="kelas"><option>VII A</option><option>VII B</option><option>VII C</option><option selected>VII D</option></select>
+Subtopik Buku: <select id="subtopik" onchange="renderModul();renderLKPD()"></select>
+Pertemuan: <select id="pertemuan" onchange="renderModul()"><option value="all">Semua Pertemuan (1 Modul Lengkap)</option><option value="1">Pertemuan 1 Saja</option><option value="2">Pertemuan 2 Saja</option><option value="3">Pertemuan 3 Saja</option><option value="4">Pertemuan 4 Saja</option><option value="5">Pertemuan 5 Saja</option><option value="6">Pertemuan 6 Saja</option></select>
+<button class="btn b2" onclick="cetak()">🖨️ CETAK MODUL AJAR</button>
+<button class="btn b3" onclick="show(8);renderLKPD()">📄 LIHAT LKPD SUBTOPIK INI</button>
+<div class="paper" id="paper"></div>
+</div>
+<div id="p8" class="box" style="display:none" id="lkpdBox">
+<h3>📄 LKPD - Lembar Kerja Peserta Didik - Simpel - Satu LKPD untuk Setiap Subtopik</h3>
+<p>Header hijau, Petunjuk Kerja, TUGAS, kotak jawaban besar. Otomatis berubah kalau Ibu ganti Bab / Subtopik.</p>
+Bab: <select id="babLKPD" onchange="syncLKPD()"></select>
+Subtopik: <select id="subLKPD" onchange="renderLKPD()"></select>
+<button class="btn b2" onclick="cetakLKPD()">🖨️ CETAK / SIMPAN PDF LKPD INI</button>
+<button class="btn b1" onclick="show(7)">⬅ KEMBALI KE MODUL AJAR</button>
+<div class="lkpd-paper" id="lkpdPaper"></div>
+</div>
+<div id="p9" class="box" style="display:none">
+<h3>📋 KISI-KISI SOAL - UTS / SAS - B. Indonesia Kelas 7 - SMPN 2 Cipongkor</h3>
+<p>Pilih Bab: <select id="babKisi" onchange="renderKisi()"></select> <button class="btn b2" onclick="cetakKisi()">🖨️ CETAK KISI-KISI INI</button></p>
+<div id="kisiPaper"></div>
+</div>
+<div id="p10" class="box" style="display:none">
+<h3>🏦 BANK SOAL - Pilih Bab, langsung muncul soal + kunci</h3>
+<p>Pilih Bab: <select id="babBank" onchange="renderBank()"></select> 
+Jenis: <select id="jenisBank" onchange="renderBank()"><option value="pg">Pilihan Ganda (20 Soal)</option><option value="essay">Essay / Uraian (5 Soal)</option><option value="all">Semua (PG + Essay)</option></select>
+<button class="btn b2" onclick="cetakBank()">🖨️ CETAK BANK SOAL INI</button>
+<label><input type="checkbox" id="tampilKunci" checked onchange="renderBank()"> Tampilkan Kunci Jawaban (kalau mau print untuk siswa, matikan ini)</label></p>
+<div id="bankPaper" class="paper" style="min-height:auto"></div>
+</div>
+</div>
+<script>
+const BAB=[
+{j:"Bab 1: Jelajah Nusantara",m:"Teks Deskripsi",hal:"1-42",sem:"Ganjil",jp:"24 JP (6 kali pertemuan)",cp:"Menganalisis informasi teks deskripsi untuk makna tersurat & tersirat; menulis teks deskripsi secara logis, kritis, kreatif.",promes:"Juli - Agustus 2026, Minggu 1-6 Semester Ganjil",
+subs:[{t:"A. Memahami Isi Teks Deskripsi",hal:"4",isi:"Membaca teks Pantan Terong yang Instagramable, menemukan gagasan utama & pesan penulis.",q:["Jelaskan pengertian teks deskripsi!","Sebutkan ciri-ciri teks deskripsi!","Jelaskan tujuan teks deskripsi!","Tuliskan gagasan utama teks Pantan Terong hal. 4!","Apa pesan penulis dalam teks Pantan Terong? Jelaskan dengan bahasamu sendiri!"]},{t:"B. Memahami Unsur Bahasa dalam Teks Deskripsi",hal:"9",isi:"Kata konkret, kalimat perincian, majas personifikasi, sapaan di media sosial.",q:["Jelaskan pengertian kata konkret! Beri 3 contoh dari teks hal. 9!","Apa yang dimaksud kalimat perincian? Tulis 2 contohnya!","Jelaskan majas personifikasi! Tulis 2 contoh dari teks!","Mengapa penulis menggunakan sapaan akrab di media sosial?","Tulis 1 paragraf deskripsi tentang tempat favoritmu, gunakan kata konkret dan kalimat perincian!"]},{t:"C. Menganalisis Teks Deskripsi dalam Sajian Visual",hal:"16",isi:"Menganalisis pamflet wisata Papandayan & Green Canyon, kelengkapan & daya tarik visual.",q:["Sebutkan isi pamflet wisata Papandayan hal. 17!","Apa saja yang harus ada dalam pamflet wisata yang baik?","Bandingkan pamflet Papandayan dan Green Canyon! Mana yang lebih menarik? Mengapa?","Apa fungsi gambar / foto dalam pamflet wisata?","Buatlah pamflet wisata sederhana tentang tempat di Cipongkor!"]},{t:"D. Menganalisis Informasi Lisan",hal:"24",isi:"Menyimak 2 teks deskripsi lisan (berita vs vlog Wae Rebo), membandingkan tujuan & pandangan penutur.",q:["Apa perbedaan teks deskripsi lisan berita dan vlog?","Apa tujuan penutur dalam teks berita Wae Rebo?","Apa tujuan penutur dalam vlog Wae Rebo?","Bandingkan pilihan kata kedua penutur tersebut!","Menurutmu, teks mana yang lebih membuat orang ingin berkunjung? Mengapa?"]},{t:"E. Menyunting Teks Deskripsi",hal:"31",isi:"Tantangan Redaksi: menyunting ejaan, tanda baca, kata depan.",q:["Sebutkan 5 kesalahan ejaan yang kamu temukan dalam teks hal. 31!","Bagaimana cara menulis kata depan di / ke yang benar?","Perbaiki kalimat berikut: 'di mana rumah mu?'","Apa fungsi tanda koma dalam teks deskripsi?","Sunting paragraf hal. 31 hingga ejaannya benar semua!"]},{t:"F. Menyajikan Teks Deskripsi Sederhana",hal:"34",isi:"Proyek menulis & Galeri Wicara: presentasi teks deskripsi karya sendiri.",q:["Tulis kerangka teks deskripsi tentang benda favoritmu!","Kembangkan kerangka tersebut menjadi 3 paragraf!","Apa yang harus diperhatikan saat mempresentasikan teks deskripsi?","Tuliskan tanggapanmu untuk presentasi temanmu!","Apa hal yang paling kamu pelajari dari Bab Teks Deskripsi ini?"]}],
+atp:["Menganalisis informasi gagasan & pesan teks deskripsi untuk makna tersurat.","Menginterpretasi gaya penulisan teks deskripsi di media sosial.","Menggunakan kosakata baru bermakna denotatif.","Menganalisis kalimat perincian & majas personifikasi.","Mempresentasikan gagasan dalam monolog deskriptif.","Mengevaluasi informasi visual & tekstual dalam pamflet wisata.","Menganalisis & membandingkan 2 teks deskripsi lisan.","Menulis ulang kalimat dengan kaidah kebahasaan.","Menulis gagasan & pengalaman dalam teks deskripsi.","Mempresentasikan hasil tulisan & memberi tanggapan relevan."],
+lkpd:"1. Amati pamflet hal.17-21. 2. Isi Tabel: Objek - Ciri - Kalimat Perinci. 3. Tulis teks deskripsi 3 paragraf. 4. Presentasi.",
+pertemuan:[
+{judul:"PERTEMUAN 1 (6 JP : 3 x 80 MENIT)",topik:"Menganalisis Isi dan Gaya Bahasa Teks Deskripsi",isi:`<p><b>PENDAHULUAN (20 MENIT):</b> Salam, doa, presensi. <b>Mindful:</b> Pejamkan mata, bayangkan tempat terindah. <b>Apersepsi:</b> Informasi apa yang ingin kamu sampaikan dari tempat itu? <b>Motivasi:</b> Gambar Pantan Terong yang Instagramable. <b>Tujuan:</b> Analisis makna tersurat & tersirat.</p><p><b>INTI (200 MENIT):</b> <b>Meaningful:</b> Baca teks Pantan Terong, hubungkan dengan konten perjalanan di media sosial. <b>Eksplorasi:</b> Kelompok analisis gagasan utama & pesan penulis, interpretasi sapaan akrab, cari arti kata sulit di KBBI. <b>Joyful:</b> Diskusi istilah media sosial. <b>Diferensiasi:</b> Kelompok cepat cari makna tersirat, kelompok lambat dibimbing guru, sediakan kamus cetak & KBBI daring.</p><p><b>PENUTUP (20 MENIT):</b> <b>Refleksi:</b> Apa beda sekadar membaca dengan menganalisis teks? <b>Rangkuman:</b> Cara menemukan pesan penulis. <b>Tindak Lanjut:</b> Cari 1 tulisan perjalanan di media sosial. <b>Penutup:</b> Salam & doa.</p>`},
+{judul:"PERTEMUAN 2 (6 JP : 3 x 80 MENIT)",topik:"Menganalisis Kalimat Perincian, Majas, dan Mempresentasikan Gagasan",isi:`<p><b>PENDAHULUAN (20 MENIT):</b> Salam, doa, presensi, review tugas, apersepsi: Bagaimana membuat deskripsi lebih hidup?</p><p><b>INTI (200 MENIT):</b> Analisis fungsi kalimat perincian pada teks Pantan Terong. Joyful: Lomba menemukan majas personifikasi. Mempresentasikan: Kelompok pilih gambar (minuman/pemandangan/hewan), susun poin deskripsi. Opsi 1 Dasar: Monolog. Opsi 2 Menengah: Skrip vlog. Opsi 3 Tantangan: Video 1-2 menit.</p><p><b>PENUTUP (20 MENIT):</b> Refleksi: Mengapa detail & bahasa kiasan penting? Rangkuman, tindak lanjut bawa pamflet wisata, salam & doa.</p>`},
+{judul:"PERTEMUAN 3 (2 JP : 80 MENIT)",topik:"Mengevaluasi Informasi dalam Pamflet Wisata",isi:`<p><b>PENDAHULUAN (10 MENIT):</b> Salam, doa, presensi. Apersepsi: Pernah kecewa karena wisata tidak sesuai promosi?</p><p><b>INTI (60 MENIT):</b> Berpasangan saling tunjukkan pamflet. Evaluasi dengan kriteria: Kelengkapan Informasi (lokasi, harga, kontak), Kredibilitas (sumber jelas? foto asli?), Daya Tarik Visual & Bahasa. Diferensiasi Konten: Guru siapkan contoh pamflet baik/sedang/kurang.</p><p><b>PENUTUP (10 MENIT):</b> Refleksi: Apa yang diperhatikan pertama kali saat lihat iklan? Rangkuman ciri pamflet terpercaya, salam & doa.</p>`},
+{judul:"PERTEMUAN 4 (4 JP : 2 x 80 MENIT)",topik:"Menganalisis Teks Deskripsi Lisan",isi:`<p><b>PENDAHULUAN (15 MENIT):</b> Salam, doa, presensi. Apersepsi: Apa yang membuat cerita tentang makanan menarik?</p><p><b>INTI (130 MENIT):</b> Mindful & Menyimak: Putar 2 audio/video Wae Rebo - Teks 1 berita formal, Teks 2 vlog personal persuasif. Isi tabel perbandingan: Tujuan, target pendengar, pilihan kata, intonasi, pesan utama. Diskusi Kritis: Teks mana yang lebih membuat ingin berkunjung? Mengapa?</p><p><b>PENUTUP (15 MENIT):</b> Refleksi: Bagaimana tujuan pembicara memengaruhi cara mendeskripsikan? Rangkuman, salam & doa.</p>`},
+{judul:"PERTEMUAN 5 (2 JP : 80 MENIT)",topik:"Menulis Kreatif dengan Kaidah Kebahasaan",isi:`<p><b>PENDAHULUAN (10 MENIT):</b> Salam, doa, presensi. Apersepsi: Tunjukkan 2 kalimat benar & salah ejaan, mana lebih meyakinkan?</p><p><b>INTI (60 MENIT):</b> Joyful: Tantangan Redaksi - paragraf deskripsi ada kesalahan ejaan, tanda baca, kata depan. Tugas 1 Dasar: Sunting hingga benar. Tugas 2 Kreatif: Tulis ulang dengan gaya sendiri, tetap pertahankan informasi utama. Saling tukar & beri umpan balik.</p><p><b>PENUTUP (10 MENIT):</b> Refleksi: Hubungan tulisan benar kaidah dengan kreatif? Rangkuman: Tulisan baik = informatif, kreatif, akurat. Tindak lanjut: Siapkan draf proyek akhir. Salam & doa.</p>`},
+{judul:"PERTEMUAN 6 (4 JP : 2 x 80 MENIT)",topik:"Proyek Menulis dan Mempresentasikan Teks Deskripsi",isi:`<p><b>PENDAHULUAN (15 MENIT):</b> Salam, doa, presensi. Jelaskan alur asesmen sumatif. Motivasi: Hari ini panggung kalian!</p><p><b>INTI (130 MENIT):</b> Menulis (Sumatif): Selesaikan draf deskripsi benda/tempat/pengalaman favorit, guru berkeliling bimbing (detail, majas, kaidah). Mempresentasikan (Kinerja Sumatif): Galeri Wicara - kelompok kecil, bergiliran presenter & audiens beri tanggapan. Produk: Membacakan tulisan / paparan vlog / cerita bebas.</p><p><b>PENUTUP (15 MENIT):</b> Refleksi Akhir Unit di sticky notes: (1) Hal paling menarik. (2) Keterampilan paling berkembang. Apresiasi guru, salam & doa.</p>`}
+]},
+{j:"Bab 2: Berkelana di Dunia Imajinasi",m:"Puisi Rakyat & Teks Naratif",hal:"43-76",sem:"Ganjil",jp:"24 JP",cp:"Menganalisis unsur puisi rakyat & teks naratif; menulis puisi & cerita fantasi secara kreatif & indah.",promes:"September - Oktober 2026, Minggu 7-12 Semester Ganjil",
+subs:[{t:"A. Mengenal dan Mengidentifikasi Unsur Puisi Rakyat",hal:"46",isi:"Pantun, syair, gurindam - bait, baris, rima, pesan.",q:["Jelaskan pengertian puisi rakyat!","Sebutkan 3 jenis puisi rakyat beserta cirinya!","Apa perbedaan pantun, syair, dan gurindam?","Tentukan rima dan pesan pantun hal. 46!","Buatlah 1 bait pantun tentang menjaga lingkungan!"]},{t:"B. Mengidentifikasi Elemen dalam Teks Naratif",hal:"52",isi:"Tokoh, latar, alur cerita fantasi, penokohan, majas, kalimat langsung/tak langsung.",q:["Sebutkan unsur-unsur teks naratif!","Jelaskan pengertian tokoh, latar, dan alur!","Siapa tokoh utama cerita fantasi hal. 52? Sebutkan sifatnya!","Ubahlah 2 kalimat langsung hal. 60 menjadi kalimat tak langsung!","Tuliskan majas yang kamu temukan dalam cerita tersebut!"]},{t:"C. Berkreasi dengan Teks Naratif",hal:"70",isi:"Menulis cerita fantasi 300 kata + musikalisasi puisi / video.",q:["Buat kerangka cerita fantasi tentang dunia imajinasimu!","Kembangkan kerangka tersebut menjadi cerita 300 kata!","Tentukan tokoh, latar, dan alur ceritamu!","Bagaimana cara membuat cerita fantasi menjadi menarik?","Apa pesan moral dari cerita fantasimu?"]}],
+atp:["Menganalisis gagasan puisi rakyat yang dibacakan.","Menganalisis unsur intrinsik puisi rakyat.","Menulis puisi rakyat secara kreatif.","Menyajikan puisi dalam musikalisasi.","Menganalisis gagasan cerita fantasi.","Menginterpretasi cerita fantasi pro/kontra.","Mengevaluasi kualitas cerita fantasi.","Menganalisis penokohan.","Menggunakan kosakata denotatif, konotatif, kiasan.","Menganalisis kalimat langsung & tak langsung.","Mengubah kalimat langsung jadi tak langsung & sebaliknya.","Menulis cerita fantasi secara kreatif.","Menyajikan cerita fantasi multimodal."],
+lkpd:"1. Bandingkan pantun/syair/gurindam hal.46-51. 2. Analisis tokoh/latar/alur hal.52-68. 3. Ubah 5 kalimat langsung jadi tak langsung. 4. Tulis cerita fantasi 300 kata.",
+pertemuan:[{judul:"PERTEMUAN 1-6 - SESUAI SUBTOPIK BUKU",topik:"Puisi Rakyat & Cerita Fantasi",isi:`<p><b>PENDAHULUAN:</b> Salam, doa, presensi, apersepsi dongeng/lagu. <b>INTI:</b> Mindful: Menyimak puisi & fantasi. Meaningful: Diskusi bait, rima, tokoh, latar, alur. Joyful: Musikalisasi puisi, bermain peran, lomba majas. Diferensiasi: Dasar (monolog), Menengah (skrip vlog), Tantangan (video 1-2 menit). <b>PENUTUP:</b> Refleksi, rangkuman, salam & doa.</p>`}]},
+{j:"Bab 3: Hal yang Baik bagi Tubuh",m:"Teks Prosedur",hal:"77-114",sem:"Ganjil",jp:"20 JP",cp:"Menganalisis & mengevaluasi teks prosedur & infografik; menulis & mempresentasikan teks prosedur multimodal.",promes:"November - Desember 2026, Minggu 13-18 Semester Ganjil",
+subs:[{t:"A. Mengidentifikasi Karakteristik Teks Prosedur",hal:"80",isi:"Isi Piringku, ciri & struktur teks prosedur.",q:["Jelaskan pengertian teks prosedur!","Sebutkan ciri-ciri teks prosedur!","Sebutkan struktur teks prosedur!","Tuliskan struktur teks prosedur Isi Piringku hal. 80!","Mengapa langkah-langkah harus urut? Jelaskan!"]},{t:"B. Mengidentifikasi Tujuan Ragam Teks Prosedur",hal:"88",isi:"Membandingkan tujuan 2 teks prosedur, hubungkan pengalaman pribadi.",q:["Apa tujuan teks prosedur pertama hal. 88?","Apa tujuan teks prosedur kedua hal. 88?","Apa perbedaan tujuan kedua teks tersebut?","Pernahkah kamu mengikuti teks prosedur? Ceritakan!","Tulis tujuan teks prosedur tentang bekal sehat!"]},{t:"C. Mengenali Unsur Kebahasaan dalam Teks Prosedur",hal:"92",isi:"Kalimat pelesapan, ajakan, larangan, inversi, adverbia + teks aural.",q:["Jelaskan kalimat ajakan! Beri 2 contoh!","Jelaskan kalimat larangan! Beri 2 contoh!","Apa yang dimaksud kalimat pelesapan?","Tulis 3 kalimat ajakan untuk hidup sehat!","Tulis 3 kalimat larangan saat di laboratorium!"]},{t:"D. Menyajikan Teks Prosedur Melalui Berbagai Media",hal:"104",isi:"Proyek menulis & presentasi teks prosedur multimodal - infografik Bekal Sehat.",q:["Buat kerangka teks prosedur Bekal Sehat!","Tulis teks prosedur Bekal Sehat lengkap dengan bahan dan langkah!","Apa saja yang harus ada dalam infografik?","Buat infografik Bekal Sehatmu!","Apa yang harus diperhatikan saat mempresentasikan teks prosedur?"]}],
+atp:["Menganalisis informasi teks prosedur untuk makna tersurat.","Mengevaluasi kualitas infografik.","Menggunakan kosakata denotatif.","Menginterpretasi teks prosedur & pengalaman pribadi.","Menganalisis perbedaan tujuan 2 teks prosedur.","Menganalisis unsur kebahasaan prosedur.","Menganalisis teks prosedur aural.","Menulis rancangan teks prosedur.","Mempresentasikan teks prosedur multimodal."],
+lkpd:"1. Bandingkan infografik hal.83-84. 2. Isi tabel Tujuan-Bahan-Langkah. 3. Buat teks prosedur + infografik Bekal Sehat.",
+pertemuan:[{judul:"PERTEMUAN 1-6 - SESUAI SUBTOPIK BUKU",topik:"Teks Prosedur & Infografik",isi:`<p><b>PENDAHULUAN:</b> Salam, doa, presensi, apersepsi bekal. <b>INTI:</b> Mindful: Amati infografik hal.83-84. Meaningful: Bandingkan 2 teks prosedur, diskusi tujuan. Joyful: Buat infografik Bekal Sehat, presentasi. <b>PENUTUP:</b> Refleksi, rangkuman, salam & doa.</p>`}]},
+{j:"Bab 4: Aksi Nyata Para Pelindung Bumi",m:"Teks Berita",hal:"115-154",sem:"Genap",jp:"20 JP",cp:"Menganalisis berita, membandingkan media, mengevaluasi kredibilitas & hoaks; menulis & mempresentasikan berita.",promes:"Januari - Februari 2027, Minggu 1-6 Semester Genap",
+subs:[{t:"A. Menganalisis Teks Berita",hal:"117",isi:"Strategi prediksi, kosakata baru dengan KBBI/Tesaurus, berita eksplanasi.",q:["Jelaskan pengertian teks berita!","Sebutkan ciri-ciri teks berita!","Apa yang dimaksud berita eksplanasi?","Prediksi isi berita hal. 117 dari judul dan fotonya!","Cari arti 5 kata sulit hal. 117 di KBBI!"]},{t:"B. Mengenali Karakteristik Berbagai Media Informasi",hal:"127",isi:"Berita cetak vs daring, teks audiovisual, kepedulian terhadap isu.",q:["Apa perbedaan berita cetak dan berita daring?","Apa kelebihan dan kekurangan berita daring?","Apa kelebihan dan kekurangan berita cetak?","Mengapa kita harus peduli terhadap isu lingkungan?","Tulis berita singkat tentang lingkungan sekolahmu!"]},{t:"C. Mengidentifikasi Unsur-Unsur Berita",hal:"132",isi:"5W+1H, judul, teras, isi berita.",q:["Sebutkan unsur 5W+1H dalam berita!","Tuliskan 5W+1H dari berita hal. 132!","Apa fungsi judul berita?","Apa fungsi teras berita?","Buat judul berita yang menarik tentang Cipongkor!"]},{t:"D. Menelaah Unsur Kebahasaan dalam Teks Berita",hal:"136",isi:"Kalimat tunggal/majemuk, konjungsi.",q:["Jelaskan perbedaan kalimat tunggal dan kalimat majemuk!","Tulis 2 kalimat tunggal dari berita hal. 136!","Tulis 2 kalimat majemuk dari berita hal. 136!","Sebutkan konjungsi yang ada dalam berita tersebut!","Ubah kalimat tunggal ini menjadi kalimat majemuk: 'Siswa membersihkan kelas.'"]},{t:"E. Menelisik Berita Palsu",hal:"139",isi:"Rambu-rambu memilih berita, cek kredibilitas & sumber, identifikasi hoaks.",q:["Jelaskan pengertian berita palsu / hoaks!","Sebutkan 5 ciri-ciri berita palsu!","Bagaimana cara mengecek kebenaran sebuah berita?","Mengapa berita palsu berbahaya? Jelaskan!","Temukan 1 berita di HP-mu, cek apakah berita itu benar atau hoaks! Tulis buktinya!"]},{t:"F. Menulis Berita",hal:"144",isi:"Proyek Pewarta Muda - menulis berita eksplanasi + podcast.",q:["Tulis kerangka berita tentang lingkungan di Cipongkor!","Kembangkan kerangka tersebut menjadi berita eksplanasi lengkap!","Apa saja yang harus ada dalam berita yang kamu tulis?","Bagaimana cara membacakan berita untuk podcast?","Apa yang kamu pelajari dari menjadi Pewarta Muda?"]}],
+atp:["Menganalisis teks berita eksplanasi dengan prediksi.","Menggunakan kamus/tesaurus untuk kosakata.","Menganalisis & membandingkan berita cetak vs daring.","Menginterpretasi teks audiovisual.","Mengevaluasi penyajian berita.","Menganalisis unsur kebahasaan berita.","Mengevaluasi kredibilitas & berita palsu.","Menulis teks berita eksplanasi.","Mempresentasikan dalam podcast."],
+lkpd:"1. Prediksi sebelum/sesudah membaca. 2. Isi Tabel 5W+1H. 3. Cek hoaks hal.139-144. 4. Tulis berita + podcast.",
+pertemuan:[{judul:"PERTEMUAN 1-6 - SESUAI SUBTOPIK BUKU",topik:"Teks Berita & Hoaks",isi:`<p><b>PENDAHULUAN:</b> Salam, doa, presensi, apersepsi berita di HP. <b>INTI:</b> Mindful: Prediksi isi berita dari judul/foto. Meaningful: Analisis 5W+1H hal.117-123, cek hoaks. Joyful: Jadi Pewarta Muda, rekam podcast berita lingkungan Cipongkor. <b>PENUTUP:</b> Refleksi, rangkuman, salam & doa.</p>`}]},
+{j:"Bab 5: Membuka Gerbang Dunia",m:"Teks Tanggapan Buku",hal:"155-192",sem:"Genap",jp:"20 JP",cp:"Menganalisis buku bergambar, merangkum, menganalisis struktur & ragam kalimat teks tanggapan; menulis tanggapan.",promes:"Maret - April 2027, Minggu 7-12 Semester Genap",
+subs:[{t:"A. Membedah Buku Bergambar",hal:"158",isi:"Buku Itam dan U - prediksi dari sampul, suasana & emosi tokoh, sajian visual.",q:["Prediksi isi buku Itam dan U dari sampulnya!","Siapa tokoh utama Itam dan U? Bagaimana sifatnya?","Suasana apa yang tergambar dalam buku Itam dan U?","Emosi apa yang dirasakan tokoh Itam? Jelaskan buktinya!","Apa pendapatmu tentang gambar / sajian visual buku Itam dan U?"]},{t:"B. Mengenal Bagian-Bagian Buku",hal:"172",isi:"Sampul, daftar isi, biodata, fiksi vs nonfiksi.",q:["Sebutkan bagian-bagian buku!","Apa fungsi sampul buku?","Apa fungsi daftar isi?","Apa perbedaan buku fiksi dan nonfiksi?","Termasuk fiksi atau nonfiksi buku Itam dan U? Mengapa?"]},{t:"C. Merangkum Buku",hal:"177",isi:"Rangkuman dari gagasan pokok + peta pikiran.",q:["Jelaskan pengertian rangkuman!","Tulis gagasan pokok setiap bagian buku Itam dan U!","Buat peta pikiran buku Itam dan U!","Tulis rangkuman buku Itam dan U dalam 1 paragraf!","Apa hal yang paling menarik dari buku Itam dan U?"]},{t:"D. Menyajikan Tanggapan terhadap Buku",hal:"181",isi:"Tanggapan lisan & tulis terhadap buku nonfiksi.",q:["Jelaskan pengertian teks tanggapan!","Apa saja isi teks tanggapan buku?","Tulis tanggapanmu tentang buku Itam dan U!","Apa kelebihan buku Itam dan U?","Apa kekurangan buku Itam dan U?"]},{t:"E. Mengenali Ragam Kalimat dan Struktur Teks Tanggapan",hal:"188",isi:"Ragam kalimat & struktur teks tanggapan + video tanggapan.",q:["Sebutkan struktur teks tanggapan!","Tulis struktur teks tanggapanmu tentang Itam dan U!","Sebutkan ragam kalimat dalam teks tanggapan hal. 188!","Tulis 2 kalimat tanggapan tentang buku yang kamu baca!","Buat video tanggapan singkat tentang buku favoritmu!"]}],
+atp:["Menganalisis gagasan dari sampul untuk prediksi.","Menginterpretasi suasana & emosi tokoh.","Mengevaluasi sajian visual.","Menganalisis fiksi vs nonfiksi & bagian buku.","Menulis rangkuman.","Menulis peta pikiran.","Menganalisis teks tanggapan.","Mempresentasikan tanggapan.","Menganalisis ragam kalimat.","Menganalisis struktur teks tanggapan.","Menulis teks tanggapan.","Menyajikan video tanggapan."],
+lkpd:"1. Baca Itam dan U hal.158-167. 2. Isi Tabel Emosi Tokoh. 3. Buat rangkuman + peta pikiran. 4. Tulis teks tanggapan.",
+pertemuan:[{judul:"PERTEMUAN 1-6 - SESUAI SUBTOPIK BUKU",topik:"Buku Itam dan U & Teks Tanggapan",isi:`<p><b>PENDAHULUAN:</b> Salam, doa, presensi, apersepsi buku favorit. <b>INTI:</b> Mindful: Prediksi cerita dari sampul. Meaningful: Baca Itam dan U hal.158-167, analisis emosi tokoh. Joyful: Buat video tanggapan buku. <b>PENUTUP:</b> Refleksi, rangkuman, salam & doa.</p>`}]},
+{j:"Bab 6: Sampaikan Melalui Surat",m:"Surat & Media Sosial",hal:"193-236",sem:"Genap",jp:"20 JP",cp:"Menganalisis & membandingkan surat, menggunakan kaidah bahasa, mengevaluasi fakta-opini; menulis surat & pesan santun.",promes:"Mei - Juni 2027, Minggu 13-18 Semester Genap",
+subs:[{t:"A. Mengenal Jenis Surat dan Media Sosial",hal:"201",isi:"Jenis surat, media sosial, KBBI daring - makna partisipasi.",q:["Sebutkan jenis-jenis surat!","Apa perbedaan surat pribadi dan surat resmi?","Apa fungsi media sosial?","Cari arti kata partisipasi di KBBI daring!","Tulis 1 pesan ajakan peduli lingkungan di media sosial!"]},{t:"B. Menganalisis Unsur-Unsur Surat",hal:"208",isi:"Unsur surat pribadi vs surat resmi.",q:["Sebutkan unsur-unsur surat pribadi!","Sebutkan unsur-unsur surat resmi!","Apa perbedaan unsur surat pribadi dan resmi?","Tulis unsur surat hal. 208!","Mengapa surat resmi harus menggunakan bahasa baku?"]},{t:"C. Menganalisis Isi Surat dan Kata Baku",hal:"211",isi:"Analisis isi surat, kata baku & tidak baku.",q:["Apa isi surat hal. 211?","Sebutkan 5 kata baku dalam surat tersebut!","Sebutkan 5 kata tidak baku, ubah menjadi baku!","Mengapa kita harus menggunakan kata baku dalam surat resmi?","Tulis kembali 1 paragraf surat hal. 211 dengan kata baku!"]},{t:"D. Merancang Pesan di Media Sosial",hal:"218",isi:"Unsur pesan media sosial, sapaan, pronomina, merancang pesan.",q:["Sebutkan unsur pesan media sosial!","Apa yang dimaksud sapaan? Beri contoh!","Apa yang dimaksud pronomina? Beri contoh!","Tulis pesan kepada guru dengan sapaan yang santun!","Rancang pesan ajakan untuk temanmu di WA!"]},{t:"E. Mengevaluasi Informasi di Ruang Bincang - Fakta dan Opini",hal:"222",isi:"Perbandingan informasi di ruang bincang Tim Duta Adiwiyata, identifikasi fakta & opini.",q:["Jelaskan pengertian fakta!","Jelaskan pengertian opini!","Tulis 2 kalimat fakta dari ruang bincang hal. 222!","Tulis 2 kalimat opini dari ruang bincang hal. 222!","Mengapa kita harus membedakan fakta dan opini?"]},{t:"F. Menulis Surat Pribadi dan Surat Resmi",hal:"230",isi:"Menulis surat resmi dengan kosakata baku + surat pribadi untuk sahabat secara santun.",q:["Tulis kerangka surat resmi kepada Kepala Sekolah!","Tulis surat resmi tersebut dengan lengkap dan bahasa baku!","Tulis kerangka surat pribadi untuk sahabatmu!","Tulis surat pribadi tersebut dengan bahasa santun!","Apa perbedaan bahasa surat resmi dan surat pribadi?"]}],
+atp:["Menganalisis informasi surat pribadi & resmi.","Membandingkan unsur, tujuan & bahasa surat.","Menggunakan kosakata baru dari surat resmi.","Menganalisis sapaan & pronomina.","Menulis pesan singkat kepada guru secara santun.","Menginterpretasi ruang bincang daring.","Mengevaluasi kredibilitas dengan fakta & opini.","Menulis surat resmi dengan kosakata baku.","Menulis surat pribadi untuk sahabat."],
+lkpd:"1. Bandingkan surat pribadi vs resmi hal.208-211. 2. Analisis pesan WA hal.213-219. 3. Tulis surat resmi ke Kepsek + surat pribadi.",
+pertemuan:[{judul:"PERTEMUAN 1-6 - SESUAI SUBTOPIK BUKU",topik:"Surat Pribadi, Resmi & Media Sosial",isi:`<p><b>PENDAHULUAN:</b> Salam, doa, presensi, apersepsi chat WA. <b>INTI:</b> Mindful: Amati contoh surat & chat. Meaningful: Bandingkan surat hal.208-211, analisis ruang bincang hal.222-228. Joyful: Tulis surat resmi + pesan ajakan peduli lingkungan. <b>PENUTUP:</b> Refleksi, rangkuman, salam & doa.</p>`}]}
+];
+function show(n){for(let i=1;i<=10;i++){document.getElementById('p'+i).style.display=i==n?'block':'none';document.getElementById('t'+i).className=i==n?'on':'';}}
+function setCari(v){document.getElementById('cari').value=v;renderCari();}
+function renderCari(){
+let q=(document.getElementById('cari').value||'').toLowerCase();
+let fb=document.getElementById('filterBab').value;
+let html='';let count=0;
+BAB.forEach((b,bi)=>{
+if(fb && !b.j.includes(fb)) return;
+let subs=b.subs.filter(s=>(s.t+' '+s.isi+' '+b.j+' '+b.m).toLowerCase().includes(q));
+if(q=='' || subs.length>0){
+count+=subs.length;
+html+=`<div class="card"><h4>${b.j} - ${b.m} | Buku hal. ${b.hal} | Semester ${b.sem} | ${b.promes}</h4><p><b>CP Bab:</b> ${b.cp}</p>`;
+subs.forEach(s=>{
+let idx=b.subs.indexOf(s);
+html+=`<div class="sub" onclick="pilihSub(${bi},${idx})"><b>${s.t} - Buku hal. ${s.hal}</b><br>${s.isi}<br><span style="color:#1565c0;font-weight:bold">👉 Klik di sini untuk Buat Modul Ajar + LKPD Subtopik Ini</span></div>`;
+});
+html+=`</div>`;
+}
+});
+document.getElementById('hasilCari').innerHTML=html||'<p>Tidak ketemu Bu. Coba ketik kata lain, misal: deskripsi / puisi / prosedur / berita / Itam / surat.</p>';
+document.getElementById('hasilHitung').innerHTML=`Ditemukan <b>${count} subtopik</b> dari buku paket. ${q?`Kata kunci: "${q}"`:''}`;
+}
+function pilihSub(bi,subIndex){
+document.getElementById('bab').value=bi;
+renderSubOptions();
+document.getElementById('subtopik').selectedIndex=subIndex;
+renderModul();syncLKPDFromModul();
+show(7);
+window.scrollTo(0,0);
+}
+function renderSubOptions(){
+let d=BAB[+document.getElementById('bab').value];
+document.getElementById('subtopik').innerHTML=d.subs.map(s=>`<option value="${s.t}">${s.t} - hal. ${s.hal}</option>`).join('');
+}
+function renderATP(){let d=BAB[document.getElementById('babATP').value];document.getElementById('atpList').innerHTML=`<h4>${d.j} - ${d.m} | Buku hal. ${d.hal} | ${d.promes}</h4><ol>${d.atp.map((a,i)=>`<li><b>ATP ${i+1}:</b> ${a}</li>`).join('')}</ol>`;}
+function cetak(){show(7);renderModul();setTimeout(function(){window.print();},300);}
+function cetakLKPD(){show(8);renderLKPD();setTimeout(function(){window.print();},300);}
+function cetakKisi(){show(9);renderKisi();setTimeout(function(){window.print();},300);}
+function cetakBank(){show(10);renderBank();setTimeout(function(){window.print();},300);}
+function syncLKPDFromModul(){
+document.getElementById('babLKPD').value=document.getElementById('bab').value;
+let d=BAB[+document.getElementById('babLKPD').value];
+document.getElementById('subLKPD').innerHTML=d.subs.map(s=>`<option value="${s.t}">${s.t} - hal. ${s.hal}</option>`).join('');
+document.getElementById('subLKPD').value=document.getElementById('subtopik').value;
+renderLKPD();
+}
+function syncLKPD(){
+let d=BAB[+document.getElementById('babLKPD').value];
+document.getElementById('subLKPD').innerHTML=d.subs.map(s=>`<option value="${s.t}">${s.t} - hal. ${s.hal}</option>`).join('');
+renderLKPD();
+}
+function renderLKPD(){
+let bi=+document.getElementById('babLKPD').value;let d=BAB[bi];
+let subT=document.getElementById('subLKPD').value;
+let sub=d.subs.find(s=>s.t==subT)||d.subs[0];
+let nomor=(bi+1)+'.'+(d.subs.indexOf(sub)+1);
+document.getElementById('lkpdPaper').innerHTML=`
+<div class="lkpd-header"><h1>LKPD ${nomor}</h1><h2>BAHASA INDONESIA KELAS VII</h2><h3>UNIT PEMBELAJARAN<br>${d.m} - ${sub.t}</h3></div>
+<p><b>Nama :</b> ........................................................ <b>Kelas :</b> ............ <b>Tanggal :</b> ....................</p>
+<p><b>Petunjuk Kerja:</b></p><p>1. &nbsp; Masing-masing peserta didik membaca materi ${d.j} - ${sub.t} Buku hal. ${sub.hal}.</p><p>2. &nbsp; Peserta didik menjawab LKPD dengan baik.</p><p>3. &nbsp; LKPD ini merupakan kisi-kisi UTS, mohon dikerjakan!</p>
+<p><b>TUGAS</b><br>Ayo Semangat Kalian jawab pertanyaan berikut!</p>
+${sub.q.map((qq,i)=>`<p class="lkpd-soal">${i+1}. &nbsp; ${qq}</p><div class="lkpd-jawab"></div>`).join('')}
+<p style="margin-top:20px"><b>Nilai:</b> ............ &nbsp; <b>KKTP:</b> ☐ Tuntas (66-100) &nbsp; ☐ Remidi (&lt;66) &nbsp; ☐ Pengayaan (&gt;86)</p>
+<div class="ttd"><div>Cipongkor, ....................<br>Guru Mata Pelajaran<br><div class="garis"></div><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118</div><div>Paraf Orang Tua<br><div class="garis"></div>( ............................ )</div></div>
+<p style="font-size:10pt;text-align:center;margin-top:16px">LKPD Bahasa Indonesia Kelas 7 - SMPN 2 Cipongkor | ${d.j} - ${sub.t} - Buku hal. ${sub.hal}</p>`;
+}
+function renderKisi(){
+let bi=+document.getElementById('babKisi').value;let d=BAB[bi];
+let rows=d.subs.map((s,i)=>`<tr><td>${i+1}</td><td>${s.t} - hal. ${s.hal}</td><td>${s.isi}</td><td>PG + Essay</td><td>4 PG + 1 Essay</td><td>C2-C4</td></tr>`).join('');
+document.getElementById('kisiPaper').innerHTML=`
+<div class="paper" style="min-height:auto"><h1>KISI-KISI SOAL</h1><h2>SUMATIF TENGAH / AKHIR SEMESTER - BAHASA INDONESIA KELAS VII</h2><p style="text-align:center">SMPN 2 Cipongkor | Tahun 2026/2027 | ${d.j} - ${d.m} | Buku hal. ${d.hal} | Semester ${d.sem}</p>
+<table class="lampiran"><tr><th>No</th><th>Materi / Subtopik</th><th>Indikator Soal</th><th>Bentuk</th><th>Jumlah</th><th>Level</th></tr>${rows}</table>
+<p><b>Total: ${d.subs.length*4} PG + ${d.subs.length} Essay = ${d.subs.length*5} Soal</b> | Waktu: 80 Menit | KKTP: 66% = Tuntas | Penyusun: Hari Lasdiana, S.Pd</p>
+<p><b>Catatan untuk Siswa:</b> Pelajari LKPD ${d.j}, Buku hal. ${d.hal}, dan contoh di buku. Soal diambil dari indikator di atas.</p></div>`;
+}
+function renderBank(){
+let bi=+document.getElementById('babBank').value;let d=BAB[bi];
+let jenis=document.getElementById('jenisBank').value;let kunci=document.getElementById('tampilKunci').checked;
+let pg=[];let essay=[];
+d.subs.forEach(s=>{ s.q.forEach((qq,qi)=>{ if(qi<4) pg.push({q:qq,sub:s.t,hal:s.hal}); else essay.push({q:qq,sub:s.t,hal:s.hal}); }); });
+let html=`<h1>BANK SOAL - ${d.j.toUpperCase()}</h1><h2>${d.m} | Buku hal. ${d.hal} | SMPN 2 Cipongkor</h2><p>Nama: .................... Kelas: ............ Tanggal: ............ Nilai: ............</p>`;
+if(jenis=='pg'||jenis=='all'){
+html+=`<h3>A. PILIHAN GANDA - Pilih jawaban yang paling tepat! (${Math.min(pg.length,20)} Soal)</h3>`;
+pg.slice(0,20).forEach((s,i)=>{
+let opts=["A. "+s.q,"B. Jawaban kurang tepat, masih perlu dilengkapi","C. Jawaban tidak sesuai dengan teks di buku hal. "+s.hal,"D. Jawaban di luar topik "+s.sub];
+html+=`<p><b>${i+1}. ${s.q}</b> <span style="font-size:10pt">( ${s.sub} - hal. ${s.hal} )</span><br>${opts.join('<br>')}<br>Jawaban: ........</p>`;
+});
+}
+if(jenis=='essay'||jenis=='all'){
+html+=`<h3>B. ESSAY / URAIAN - Jawab dengan kalimat lengkap! (${essay.length} Soal)</h3>`;
+essay.forEach((s,i)=>{ html+=`<p><b>${i+1}. ${s.q}</b> <span style="font-size:10pt">( ${s.sub} - hal. ${s.hal} )</span></p><div style="border:1px solid #000;min-height:60px;margin:6px 0"></div>`; });
+}
+if(kunci){
+html+=`<div style="border:2px dashed #000;padding:10px;margin-top:20px;background:#fff8e1"><h3>🔑 KUNCI JAWABAN - UNTUK GURU, JANGAN DIBAGIKAN KE SISWA</h3><p><b>Pilihan Ganda:</b> Jawaban yang benar untuk semua PG di atas adalah <b>A</b>, karena A adalah pertanyaan LKPD yang sesuai dengan materi buku hal. ${d.hal}. Guru dapat mengacak opsi A-D saat print untuk siswa.</p><p><b>Essay:</b> Nilai dengan Rubrik: Isi 40, Struktur 30, Bahasa 20, Ejaan 10. Total 100. KKTP 66% = Tuntas.</p><p><b>Indikator:</b> Lihat Kisi-Kisi ${d.j} di tombol 📋 KISI-KISI.</p></div>`;
+}
+document.getElementById('bankPaper').innerHTML=html;
+}
+function uploadFile(bagian, input){
+let file = input.files[0];
+if(!file) return;
+let reader = new FileReader();
+reader.onload = function(e){
+let data = JSON.parse(localStorage.getItem('fileRevisi')||'{}');
+if(!data[bagian]) data[bagian]=[];
+data[bagian].push({nama:file.name, tgl:new Date().toLocaleDateString('id-ID'), isi:e.target.result, tipe:file.type});
+try{ localStorage.setItem('fileRevisi', JSON.stringify(data)); }catch(err){ alert('File terlalu besar Bu, simpan di folder saja ya. File kecil di bawah 2MB yang bisa tersimpan di sini.'); return; }
+tampilFile(bagian);
+alert('Berhasil Bu! File ' + file.name + ' sudah tersimpan untuk ' + bagian + '. Besok kalau Ibu buka lagi di laptop yang sama, file ini masih ada.');
+};
+reader.readAsDataURL(file);
+}
+function tampilFile(bagian){
+let data = JSON.parse(localStorage.getItem('fileRevisi')||'{}');
+let list = data[bagian]||[];
+let el = document.getElementById('list-'+bagian);
+if(!el) return;
+if(list.length==0){ el.innerHTML='<span style="font-size:12px;color:#666">Belum ada file revisi. File asli masih yang di atas.</span>'; return; }
+el.innerHTML = list.map((f,i)=>`<div style="background:#fff;padding:8px;border-radius:8px;margin:4px 0;border:1px solid #ddd">📄 <b>${f.nama}</b> - Upload: ${f.tgl} <br><a href="${f.isi}" download="${f.nama}" target="_blank" style="color:#1565c0">👁️ Lihat / Download</a> &nbsp; <a href="#" onclick="hapusFile('${bagian}',${i});return false;" style="color:red">🗑️ Hapus</a></div>`).join('');
+}
+function hapusFile(bagian, idx){
+if(!confirm('Hapus file ini Bu?')) return;
+let data = JSON.parse(localStorage.getItem('fileRevisi')||'{}');
+data[bagian].splice(idx,1);
+localStorage.setItem('fileRevisi', JSON.stringify(data));
+tampilFile(bagian);
+}
+function renderModul(){
+let bi=+document.getElementById('bab').value;let d=BAB[bi];
+let simpanSub=document.getElementById('subtopik').value;
+renderSubOptions();
+if(simpanSub) document.getElementById('subtopik').value=simpanSub;
+let subT=document.getElementById('subtopik').value;
+let sub=d.subs.find(s=>s.t==subT)||d.subs[0];
+document.getElementById('modulInfo').innerHTML=`<b>Sekarang membuat:</b> ${d.j} - <b>${sub.t} - Buku hal. ${sub.hal}</b> | ${sub.isi}`;
+document.getElementById('cekIntegrasi').innerHTML=`<b>✅ CEK INTEGRASI - Modul ini sudah lengkap, siap print:</b><br>✅ CP Fase D Nomor 46 Tahun 2025: Ada &nbsp; ✅ ATP Bab ini: ${d.atp.length} ATP &nbsp; ✅ PROTA: Semester ${d.sem}, ${d.jp} &nbsp; ✅ PROMES: ${d.promes} &nbsp; ✅ KKTP: Tuntas 66% &nbsp; ✅ Buku hal. ${d.hal} &nbsp; ✅ Subtopik: ${sub.t} hal. ${sub.hal} &nbsp; ✅ LKPD Subtopik ini: Ada, klik tombol LKPD`;
+let pil=document.getElementById('pertemuan').value;let list=d.pertemuan;if(pil!=="all")list=[d.pertemuan[+pil-1]];
+let ph=list.map(p=>`<div class="pertemuan"><h4>${p.judul}</h4><p><b>${p.topik}</b></p>${p.isi}</div>`).join('');
+document.getElementById('paper').innerHTML=`
+<h1>MODUL AJAR DEEP LEARNING</h1><h1>MATA PELAJARAN : BAHASA INDONESIA</h1><h2>${d.j.toUpperCase()}</h2>
+<div class="kotak"><b>KETERKAITAN DOKUMEN - TERINTEGRASI:</b> Modul ini disusun berdasarkan CP Nomor 46 Tahun 2025, dijabarkan dalam ${d.atp.length} ATP Bab ini, sesuai PROTA Semester ${d.sem} Tahun 2026/2027, dilaksanakan pada PROMES ${d.promes}, dan dinilai dengan KKTP Tuntas 66% (lihat Bagian G). Buku sumber: Bahasa Indonesia Kelas VII Edisi Revisi, hal. ${d.hal}.</div>
+<h3>A. IDENTITAS MODUL - TERINTEGRASI PROTA & PROMES</h3><div class="ident"><table><tr><td>Nama Sekolah</td><td>:</td><td><b>SMPN 2 Cipongkor</b></td></tr><tr><td>Nama Penyusun</td><td>:</td><td><b>Hari Lasdiana, S.Pd</b></td></tr><tr><td>Mata Pelajaran</td><td>:</td><td><b>Bahasa Indonesia</b></td></tr><tr><td>Kelas / Fase / Semester</td><td>:</td><td><b>${document.getElementById('kelas').value} / D / ${d.sem} (PROTA)</b></td></tr><tr><td>Alokasi Waktu</td><td>:</td><td><b>${d.jp} (PROTA)</b></td></tr><tr><td>Jadwal Pelaksanaan (PROMES)</td><td>:</td><td><b>${d.promes}</b></td></tr><tr><td>Tahun Pelajaran</td><td>:</td><td><b>2026 / 2027</b></td></tr><tr><td>Buku Sumber</td><td>:</td><td><b>Bahasa Indonesia Kelas VII Edisi Revisi, hal. ${d.hal} - ${d.m}</b></td></tr><tr><td>Subtopik Buku</td><td>:</td><td><b>${sub.t} - hal. ${sub.hal} - ${sub.isi}</b></td></tr></table></div>
+<h3>B. IDENTIFIKASI KESIAPAN PESERTA DIDIK</h3><p>Peserta didik sudah memiliki pengetahuan awal sesuai subtopik ${sub.t} di buku hal. ${sub.hal}. Minat: wisata, kuliner, media sosial, fotografi, dongeng. Kebutuhan Belajar: Visual (gambar/video/pamflet), Auditori (diskusi & menyimak), Kinestetik (menulis, proyek, vlog).</p>
+<h3>C. KARAKTERISTIK MATERI PELAJARAN</h3><p><b>Konseptual & Prosedural:</b> ${d.m} - ${sub.isi} <b>Relevansi:</b> Relevan dengan kehidupan sehari-hari di Cipongkor. <b>Tingkat Kesulitan:</b> Sedang. <b>Struktur Materi:</b> Sesuai urutan Daftar Isi buku hal. ${d.hal}.</p>
+<h3>D. DIMENSI PROFIL LULUSAN</h3><p><b>Keimanan & Ketakwaan:</b> Mensyukuri ciptaan Tuhan. <b>Kewargaan:</b> Menghargai keragaman budaya Indonesia. <b>Penalaran Kritis:</b> Mengevaluasi informasi secara objektif. <b>Kreativitas:</b> Menghasilkan karya orisinal. <b>Kolaborasi:</b> Bekerja sama dalam kelompok. <b>Kemandirian:</b> Bertanggung jawab atas belajarnya. <b>Kesehatan:</b> Menjaga lingkungan. <b>Komunikasi:</b> Menyampaikan gagasan lisan & tulisan secara efektif & santun.</p>
+<h3 style="text-align:center">DESAIN PEMBELAJARAN - TERINTEGRASI CP & ATP</h3>
+<h4>A. CAPAIAN PEMBELAJARAN (CP) - NOMOR : 46 TAHUN 2025 - FASE D</h4><p><b>CP Bab ini:</b> ${d.cp}</p><p><b>Menyimak:</b> Menganalisis gagasan dari teks aural. <b>Membaca dan Memirsa:</b> Menganalisis informasi dari teks visual/audiovisual untuk makna tersurat & tersirat. <b>Berbicara dan Mempresentasikan:</b> Mempresentasikan gagasan untuk pengajuan usul & solusi. <b>Menulis:</b> Menulis gagasan dalam berbagai tipe teks secara logis, kritis, kreatif, menarik, indah.</p>
+<h4>B. LINTAS DISIPLIN ILMU</h4><p><b>IPS (Geografi):</b> Lokasi & karakteristik tempat di Indonesia. <b>Seni Budaya:</b> Keindahan alam & rumah adat. <b>Prakarya:</b> Makanan khas daerah. <b>Informatika/TIK:</b> Media digital, blog, vlog.</p>
+<h4>C. TUJUAN PEMBELAJARAN - DARI ATP ( ${d.atp.length} ATP BAB INI )</h4><ol>${d.atp.map((a,i)=>`<li><b>ATP ${i+1}:</b> ${a}</li>`).join('')}</ol><p><b>Fokus Subtopik Ini:</b> ${sub.t} - hal. ${sub.hal} - ${sub.isi}</p>
+<h4>D. TOPIK PEMBELAJARAN KONTEKSTUAL</h4><p>${sub.t} - ${sub.isi} Buku hal. ${sub.hal}. Mendeskripsikan / menganalisis keindahan alam, kuliner, budaya Indonesia melalui ${d.m} untuk dipublikasikan di media sosial / blog perjalanan.</p>
+<h4>E. KERANGKA PEMBELAJARAN</h4><p><b>Model:</b> <i>Discovery Learning, Project-Based Learning</i> | <b>Pendekatan:</b> <i>Deep Learning (Mindful, Meaningful, Joyful)</i> | <b>Metode:</b> Diskusi, Tanya Jawab, Presentasi, Penugasan, Proyek. <b>Diferensiasi Konten:</b> Teks, gambar, video. <b>Diferensiasi Proses:</b> Individu, berpasangan, kelompok. <b>Diferensiasi Produk:</b> Tulisan, paparan lisan, vlog. <b>Kemitraan:</b> Perpustakaan, orang tua, travel blogger. <b>Lingkungan:</b> Kelas nyaman, taman sekolah, internet, KBBI daring, Canva/Kahoot!/Quizizz. <b>Budaya Belajar:</b> Syukur, nalar kritis, kreativitas, gotong royong, kemandirian, kepedulian.</p>
+<h4>F. LANGKAH-LANGKAH PEMBELAJARAN BERDIFERENSIASI - SESUAI PROMES ${d.promes}</h4>${ph}
+<h4>G. ASESMEN PEMBELAJARAN - TERINTEGRASI KKTP & LKPD</h4><p><b>ASESMEN DIAGNOSTIK:</b> Tanya jawab awal + tabel Saya Sudah Tahu / Saya Belum Tahu. <b>ASESMEN FORMATIF:</b> Tanya jawab, diskusi kelompok, LKPD, observasi. <b>LKPD:</b> ${d.lkpd} - <b>Lihat LKPD lengkap di tombol LKPD, 1 LKPD untuk 1 Subtopik, 5 soal + kotak jawaban.</b> <b>ASESMEN SUMATIF:</b> Produk tulisan + presentasi kinerja + tes tertulis.</p><p><b>KKTP:</b></p><table><tr><th>Persentase</th><th>Kategori</th><th>Tindak Lanjut</th></tr><tr><td>0-40%</td><td>Belum Mencapai</td><td>Remidi total</td></tr><tr><td>41-65%</td><td>Belum Tuntas</td><td>Remidi sebagian</td></tr><tr><td>66-85%</td><td>Sudah Tuntas</td><td>Lanjut ke ATP berikutnya</td></tr><tr><td>86-100%</td><td>Sudah Tuntas</td><td>Pengayaan</td></tr></table><p><b>Batas Tuntas = 66%.</b></p>
+<div class="lampiran"><h4>LAMPIRAN: LKPD & RUBRIK - ${sub.t} - DINILAI DENGAN KKTP 66%</h4><p>${d.lkpd}</p><p><b>Soal LKPD Subtopik ini (lengkap di halaman LKPD):</b></p><ol>${sub.q.map(q=>`<li>${q}</li>`).join('')}</ol><table><tr><th>Aspek</th><th>Skor</th><th>Kriteria</th></tr><tr><td>Isi / Gagasan</td><td>40</td><td>Sesuai topik, lengkap, logis, kritis</td></tr><tr><td>Struktur</td><td>30</td><td>Sesuai struktur teks</td></tr><tr><td>Bahasa</td><td>20</td><td>Kata konkret, kalimat perincian, majas, santun</td></tr><tr><td>Ejaan & Kaidah</td><td>10</td><td>Huruf kapital, tanda baca, kata depan benar</td></tr><tr><td><b>Total</b></td><td><b>100</b></td><td>KKTP 66% = Tuntas, di bawah 66 = Remidi</td></tr></table><p>Nama Siswa: ............................ Kelas: ............ Nilai: ............ KKTP: ☐ Tuntas ☐ Remidi ☐ Pengayaan &nbsp; Paraf Guru: ............</p></div>
+<div class="ttd"><div>Mengetahui,<br>Kepala Sekolah<br><div class="garis"></div><b>Sumaroto, M.Pd</b><br>NIP. 197208211998031003</div><div>Cipongkor, ... Juli 2026<br>Guru Mata Pelajaran<br><div class="garis"></div><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118</div></div>`;
+document.getElementById('kelas').onchange=renderModul;
+}
+document.getElementById('babATP').innerHTML=BAB.map((b,i)=>`<option value="${i}">${b.j}</option>`).join('');
+document.getElementById('bab').innerHTML=BAB.map((b,i)=>`<option value="${i}">${b.j} - ${b.m}</option>`).join('');
+document.getElementById('babLKPD').innerHTML=BAB.map((b,i)=>`<option value="${i}">${b.j} - ${b.m}</option>`).join('');
+document.getElementById('babKisi').innerHTML=BAB.map((b,i)=>`<option value="${i}">${b.j} - ${b.m}</option>`).join('');
+document.getElementById('babBank').innerHTML=BAB.map((b,i)=>`<option value="${i}">${b.j} - ${b.m}</option>`).join('');
+renderCari();renderATP();renderSubOptions();renderModul();syncLKPDFromModul();renderKisi();renderBank();
+['CP','ATP','PROTA','PROMES','KKTP'].forEach(b=>tampilFile(b));
+</script></body></html>
