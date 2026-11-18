@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Perangkat Ajar Terpadu  + BUKU - B. Indonesia Kelas 7 | SMPN 2 Cipongkor</title>
+<title>Perangkat Ajar Terpadu FINAL - B. Indonesia Kelas 7 | SMPN 2 Cipongkor</title>
 <style>
 body{font-family:'Times New Roman',Times,serif;font-size:12pt;margin:0;background:#e8e8e8;color:#000}
 .toolbar{background:#1565c0;color:#fff;padding:12px;text-align:center;position:sticky;top:0;z-index:10;font-family:Arial}
@@ -36,10 +36,21 @@ body{font-family:'Times New Roman',Times,serif;font-size:12pt;margin:0;backgroun
 .upload{border:2px dashed #1565c0;border-radius:10px;padding:12px;margin-top:14px;background:#e3f2fd}
 .jurnal-form label{display:block;font-weight:bold;margin:10px 0 4px}.jurnal-form input,.jurnal-form select{margin-bottom:2px}
 .cover{text-align:center;padding:40px 20px;border:3px double #1565c0;border-radius:12px;background:linear-gradient(#e3f2fd,#fff);margin:16px auto}
+/* SPLASH PROFIL - TAMPILAN AWAL PROFESIONAL */
+#splash{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0d47a1,#1565c0,#42a5f5);display:flex;align-items:center;justify-content:center;padding:16px;font-family:Arial}
+.splash-card{background:#fff;width:100%;max-width:520px;border-radius:18px;padding:22px;box-shadow:0 10px 30px #0005;max-height:92vh;overflow:auto}
+.splash-card h1{margin:0;text-align:center;color:#1565c0;font-size:20px}
+.splash-card h2{margin:4px 0 2px;text-align:center;font-size:15px}
+.splash-card p{margin:6px 0;text-align:center;color:#555;font-size:13px}
+.splash-card label{display:block;font-weight:bold;margin:12px 0 4px;font-size:13px}
+.splash-card input{width:100%;padding:11px;border:2px solid #ddd;border-radius:10px;box-sizing:border-box;font-size:14px}
+.splash-card input:focus{border-color:#1565c0;outline:none}
+.btn-masuk{width:100%;padding:14px;border:0;border-radius:12px;background:#ff9800;color:#fff;font-weight:bold;font-size:16px;cursor:pointer;margin-top:16px}
+.btn-masuk:hover{background:#ef6c00}
 @media print{
 @page{size:A4;margin:15mm}
 body{background:#fff}
-.toolbar,.searchbar{display:none!important}
+.toolbar,.searchbar,#splash{display:none!important}
 .wrap{max-width:none;padding:0;margin:0}
 .wrap .box{display:none!important}
 #modulBox,#p7,#lkpdBox,#p8,#p9,#p10,#p11,#p12,#p13{display:block!important}
@@ -49,14 +60,30 @@ body{background:#fff}
 }
 </style></head>
 <body>
+<!-- HALAMAN PROFIL AWAL - MUNCUL SEBELUM APLIKASI -->
+<div id="splash"><div class="splash-card">
+<h1>📚 PERANGKAT AJAR TERPADU</h1>
+<h2>BAHASA INDONESIA KELAS VII</h2>
+<p><b>SMPN 2 CIPONGKOR</b> - Kabupaten Bandung Barat<br>Tahun Pelajaran 2026/2027</p>
+<p style="background:#e3f2fd;padding:8px;border-radius:8px">Silakan lengkapi profil di bawah ini dulu Bu, agar nama Ibu otomatis muncul di Modul, LKPD, Kisi-Kisi, dan Tanda Tangan. Sekali isi saja, besok buka lagi sudah tersimpan.</p>
+<label>👩‍🏫 Nama Guru:</label><input id="inNamaGuru" placeholder="Contoh: Hari Lasdiana, S.Pd" value="Hari Lasdiana, S.Pd">
+<label>🪪 NIP Guru:</label><input id="inNipGuru" placeholder="Contoh: 1987041420252111118" value="1987041420252111118">
+<label>📖 Bidang Studi:</label><input id="inBidang" placeholder="Contoh: Bahasa Indonesia" value="Bahasa Indonesia">
+<label>🏫 Nama Sekolah:</label><input id="inSekolah" placeholder="Contoh: SMPN 2 Cipongkor" value="SMPN 2 Cipongkor">
+<label>👨‍💼 Nama Kepala Sekolah:</label><input id="inNamaKepsek" placeholder="Contoh: Sumaroto, M.Pd" value="Sumaroto, M.Pd">
+<label>🪪 NIP Kepala Sekolah:</label><input id="inNipKepsek" placeholder="Contoh: 197208211998031003" value="197208211998031003">
+<button class="btn-masuk" onclick="masukAplikasi()">✅ MASUK APLIKASI →</button>
+<p style="font-size:11px">Data ini hanya tersimpan di laptop / HP Ibu saja, tidak dikirim ke mana-mana.</p>
+</div></div>
+
 <div class="toolbar">
-<b>PERANGKAT AJAR TERPADU + BUKU - B. INDONESIA KELAS 7 - SMPN 2 CIPONGKOR</b><br>
-<button id="t1" class="on" onclick="show(1)">🔍 CARI TOPIK / BAB</button><button id="t2" onclick="show(2)">CP</button><button id="t3" onclick="show(3)">ATP</button><button id="t4" onclick="show(4)">PROTA</button><button id="t5" onclick="show(5)">PROMES</button><button id="t6" onclick="show(6)">KKTP</button><button id="t7" onclick="show(7)">📝 MODUL AJAR</button><button id="t8" onclick="show(8)">📄 LKPD</button><button id="t9" onclick="show(9)">📋 KISI-KISI</button><button id="t10" onclick="show(10)">🏦 BANK SOAL</button><button id="t11" onclick="show(11)">📓 JURNAL HARIAN</button><button id="t12" onclick="show(12)">📖 JURNAL PELAJARAN</button><button id="t13" onclick="show(13)">📚 BUKU ELEKTRONIK</button><br>
-<span style="font-size:12px"></span>
+<b>PERANGKAT AJAR TERPADU - <span class="txtBidang">BAHASA INDONESIA</span> KELAS 7 - <span class="txtSekolah">SMPN 2 CIPONGKOR</span></b><br>
+<button id="t1" class="on" onclick="show(1)">🔍 CARI TOPIK / BAB</button><button id="t2" onclick="show(2)">CP</button><button id="t3" onclick="show(3)">ATP</button><button id="t4" onclick="show(4)">PROTA</button><button id="t5" onclick="show(5)">PROMES</button><button id="t6" onclick="show(6)">KKTP</button><button id="t7" onclick="show(7)">📝 MODUL AJAR</button><button id="t8" onclick="show(8)">📄 LKPD</button><button id="t9" onclick="show(9)">📋 KISI-KISI</button><button id="t10" onclick="show(10)">🏦 BANK SOAL</button><button id="t11" onclick="show(11)">📓 JURNAL HARIAN</button><button id="t12" onclick="show(12)">📖 JURNAL PELAJARAN</button><button id="t13" onclick="show(13)">📚 BUKU ELEKTRONIK</button><button onclick="bukaProfil()" style="background:#ff9800;color:#fff">👤 UBAH PROFIL</button><br>
+<span style="font-size:12px">Guru: <span class="txtGuru">Hari Lasdiana, S.Pd</span> - NIP. <span class="txtNipGuru">1987041420252111118</span> | Kepsek: <span class="txtKepsek">Sumaroto, M.Pd</span> | 2026/2027 | Buku: B. Indonesia VII Edisi Revisi 2023</span>
 </div>
 <div class="wrap">
 <div id="p1" class="box">
-<div class="cover"><h1 style="font-size:22pt;margin:4px">PERANGKAT AJAR TERPADU</h1><h2 style="font-size:18pt;margin:4px">BAHASA INDONESIA KELAS VII</h2><p style="font-size:14pt"><b>SMPN 2 CIPONGKOR</b><br>Kabupaten Bandung Barat<br>Tahun Pelajaran 2026/2027<br><br>Disusun Oleh:<br><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118<br><br>Mengetahui,<br><b>Ading Rosidi, S.Pd</b><br>NIP. 196808101998021003</p><p style="font-size:11pt">Isi: CP - ATP - PROTA - PROMES - KKTP - Modul Ajar - LKPD - Kisi-Kisi - Bank Soal - Jurnal Harian - Jurnal Pelajaran - Buku Elektronik<br>Semua dalam 1 File. Cari Topik di bawah, klik Subtopik, langsung jadi Modul + LKPD.</p></div>
+<div class="cover"><h1 style="font-size:22pt;margin:4px">PERANGKAT AJAR TERPADU</h1><h2 style="font-size:18pt;margin:4px"><span class="txtBidang">BAHASA INDONESIA</span> KELAS VII</h2><p style="font-size:14pt"><b><span class="txtSekolah">SMPN 2 CIPONGKOR</span></b><br>Kabupaten Bandung Barat<br>Tahun Pelajaran 2026/2027<br><br>Disusun Oleh:<br><b><span class="txtGuru">Hari Lasdiana, S.Pd</span></b><br>NIP. <span class="txtNipGuru">1987041420252111118</span><br><br>Mengetahui,<br><b><span class="txtKepsek">Sumaroto, M.Pd</span></b><br>NIP. <span class="txtNipKepsek">197208211998031003</span></p><p style="font-size:11pt">Isi: CP - ATP - PROTA - PROMES - KKTP - Modul Ajar - LKPD - Kisi-Kisi - Bank Soal - Jurnal Harian - Jurnal Pelajaran - Buku Elektronik<br>Semua dalam 1 File. Cari Topik di bawah, klik Subtopik, langsung jadi Modul + LKPD.</p></div>
 <div class="searchbar">
 <label><b>🔍 Cari Topik Sesuai Buku Paket:</b></label>
 <input id="cari" placeholder="Ketik di sini... Contoh: berita palsu / puisi / surat / prosedur / deskripsi / Itam" oninput="renderCari()">
@@ -87,7 +114,7 @@ body{background:#fff}
 <div class="cek" id="cekIntegrasi"></div>
 <p id="modulInfo"></p>
 Bab: <select id="bab" onchange="renderModul();renderLKPD()"></select>
-Kelas: <select id="kelas"><option>VII</select>
+Kelas: <select id="kelas"><option>VII A</option><option>VII B</option><option>VII C</option><option selected>VII D</option></select>
 Subtopik Buku: <select id="subtopik" onchange="renderModul();renderLKPD()"></select>
 Pertemuan: <select id="pertemuan" onchange="renderModul()"><option value="all">Semua Pertemuan (1 Modul Lengkap)</option><option value="1">Pertemuan 1 Saja</option><option value="2">Pertemuan 2 Saja</option><option value="3">Pertemuan 3 Saja</option><option value="4">Pertemuan 4 Saja</option><option value="5">Pertemuan 5 Saja</option><option value="6">Pertemuan 6 Saja</option></select>
 <button class="btn b2" onclick="cetak()">🖨️ CETAK MODUL AJAR</button>
@@ -105,23 +132,23 @@ Subtopik: <select id="subLKPD" onchange="renderLKPD()"></select>
 <div class="lkpd-paper" id="lkpdPaper"></div>
 </div>
 <div id="p9" class="box" style="display:none">
-<h3>📋 KISI-KISI SOAL - UTS / SAS - B. Indonesia Kelas 7 - SMPN 2 Cipongkor</h3>
+<h3>📋 KISI-KISI SOAL - UTS / SAS - <span class="txtBidang">Bahasa Indonesia</span> Kelas 7 - <span class="txtSekolah">SMPN 2 Cipongkor</span></h3>
 <p>Pilih Bab: <select id="babKisi" onchange="renderKisi()"></select> <button class="btn b2" onclick="cetakKisi()">🖨️ CETAK KISI-KISI INI</button></p>
 <div id="kisiPaper"></div>
 </div>
 <div id="p10" class="box" style="display:none">
-<h3>🏦 BANK SOAL - Pilih Bab, langsung muncul soal + kunci</h3>
+<h3>🏦 BANK SOAL - Pilih Bab, langsung muncul soal + kunci - 10 PG + 5 Essay, Sesuai Buku Paket</h3>
 <p>Pilih Bab: <select id="babBank" onchange="renderBank()"></select> 
-Jenis: <select id="jenisBank" onchange="renderBank()"><option value="pg">Pilihan Ganda (20 Soal)</option><option value="essay">Essay / Uraian (5 Soal)</option><option value="all">Semua (PG + Essay)</option></select>
+Jenis: <select id="jenisBank" onchange="renderBank()"><option value="pg">Pilihan Ganda (10 Soal - Sesuai Buku)</option><option value="essay">Essay / Uraian (5 Soal - Sesuai Buku)</option><option value="all">Semua (10 PG + 5 Essay)</option></select>
 <button class="btn b2" onclick="cetakBank()">🖨️ CETAK BANK SOAL INI</button>
 <label><input type="checkbox" id="tampilKunci" checked onchange="renderBank()"> Tampilkan Kunci Jawaban (kalau mau print untuk siswa, matikan ini)</label></p>
 <div id="bankPaper" class="paper" style="min-height:auto"></div>
 </div>
 <div id="p11" class="box" style="display:none">
-<h3>📓 JURNAL HARIAN - B. Indonesia Kelas 7 - SMPN 2 Cipongkor - Hari Lasdiana, S.Pd</h3>
+<h3>📓 JURNAL HARIAN - <span class="txtBidang">Bahasa Indonesia</span> Kelas 7 - <span class="txtSekolah">SMPN 2 Cipongkor</span> - <span class="txtGuru">Hari Lasdiana, S.Pd</span></h3>
 <div class="jurnal-form">
 <label>Tanggal:</label><input type="date" id="jhTanggal">
-<label>Kelas:</label><select id="jhKelas"><option>VII</select>
+<label>Kelas:</label><select id="jhKelas"><option>VII A</option><option>VII B</option><option>VII C</option><option selected>VII D</option></select>
 <label>Jam:</label><input type="text" id="jhJam" placeholder="Contoh: 07.30 - 09.00">
 <label>Bab / Materi:</label><select id="jhBab"></select>
 <label>Materi yang diajarkan:</label><input type="text" id="jhMateri" placeholder="Contoh: Bab 4 - E. Menelisik Berita Palsu hal. 139">
@@ -133,13 +160,13 @@ Jenis: <select id="jenisBank" onchange="renderBank()"><option value="pg">Pilihan
 </div>
 <button class="btn b2" onclick="simpanJurnalHarian()">💾 SIMPAN JURNAL HARIAN INI</button> <button class="btn b1" onclick="cetakJurnalHarian()">🖨️ CETAK JURNAL HARIAN</button>
 <div id="listJurnalHarian" style="margin-top:12px"></div>
-<div class="ttd"><div>Mengetahui,<br>Kepala Sekolah<br><div class="garis"></div><b>Ading Rosidi, S.Pd</b><br>NIP. 196808101998021003</div><div>Cipongkor, ....................<br>Guru Mata Pelajaran<br><div class="garis"></div><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118</div></div>
+<div class="ttd"><div>Mengetahui,<br>Kepala Sekolah<br><div class="garis"></div><b><span class="txtKepsek">Sumaroto, M.Pd</span></b><br>NIP. <span class="txtNipKepsek">197208211998031003</span></div><div>Cipongkor, ....................<br>Guru Mata Pelajaran<br><div class="garis"></div><b><span class="txtGuru">Hari Lasdiana, S.Pd</span></b><br>NIP. <span class="txtNipGuru">1987041420252111118</span></div></div>
 </div>
 <div id="p12" class="box" style="display:none">
 <h3>📖 JURNAL PELAJARAN / REFLEKSI - Per Pertemuan</h3>
 <div class="jurnal-form">
 <label>Tanggal:</label><input type="date" id="jpTanggal">
-<label>Kelas:</label><select id="jpKelas"><option>VII</select>
+<label>Kelas:</label><select id="jpKelas"><option>VII A</option><option>VII B</option><option>VII C</option><option selected>VII D</option></select>
 <label>Pertemuan Ke:</label><select id="jpPert"><option>Pertemuan 1</option><option>Pertemuan 2</option><option>Pertemuan 3</option><option>Pertemuan 4</option><option>Pertemuan 5</option><option>Pertemuan 6</option></select>
 <label>Bab / Subtopik:</label><select id="jpBab"></select>
 <label>✅ Apa yang SUDAH tercapai hari ini:</label><input type="text" id="jpCapai" placeholder="Contoh: Anak sudah bisa membedakan berita benar dan hoaks">
@@ -151,29 +178,46 @@ Jenis: <select id="jenisBank" onchange="renderBank()"><option value="pg">Pilihan
 <div id="listJurnalPelajaran" style="margin-top:12px"></div>
 </div>
 <div id="p13" class="box" style="display:none">
-<h3>📚 BUKU ELEKTRONIK - Bahasa Indonesia Kelas VII Edisi Revisi 2023</h3>
-<p>Buku paket Ibu langsung dibuka dari sini, tidak perlu buka file lain lagi.</p>
-<div style="border:2px dashed #1565c0;border-radius:10px;padding:12px;background:#e3f2fd">
-<b>📤 Upload Buku Paket (PDF) - Cukup 1x saja:</b><br>
-<span style="font-size:12px">Cara paling aman: simpan file PDF buku paket Ibu dengan nama <b>buku-kelas7.pdf</b> di folder yang sama dengan file index.html ini. Atau upload di sini kalau file-nya di bawah 8MB.</span><br><br>
-<input type="file" id="inputBuku" accept=".pdf" onchange="uploadBuku(this)">
-<div id="infoBuku" style="margin-top:8px"></div>
-</div>
-<p style="margin-top:12px"><b>Lompat Cepat ke Bab:</b><br>
-<button class="btn b1" onclick="lompatBuku(1)">Bab 1 - hal. 1</button>
-<button class="btn b1" onclick="lompatBuku(43)">Bab 2 - hal. 43</button>
-<button class="btn b1" onclick="lompatBuku(77)">Bab 3 - hal. 77</button>
-<button class="btn b1" onclick="lompatBuku(115)">Bab 4 - hal. 115</button>
-<button class="btn b1" onclick="lompatBuku(139)">Bab 4 - E. Berita Palsu hal. 139</button>
-<button class="btn b1" onclick="lompatBuku(155)">Bab 5 - hal. 155</button>
-<button class="btn b1" onclick="lompatBuku(193)">Bab 6 - hal. 193</button>
-</p>
-<p>Halaman yang mau dibuka: <input type="number" id="halBuku" value="139" style="width:80px;display:inline-block"> <button class="btn b2" onclick="lompatBuku(document.getElementById('halBuku').value)">➡️ BUKA HALAMAN INI</button> <button class="btn b3" onclick="bukaBukuTabBaru()">🔗 BUKA DI TAB BARU / LAYAR PENUH</button></p>
-<iframe id="viewerBuku" style="width:100%;height:700px;border:2px solid #1565c0;border-radius:10px;background:#f5f5f5" src=""></iframe>
-<p style="font-size:12px;color:#666">Tips Bu: Kalau Ibu mau buku-nya selalu kebuka walau ganti laptop, simpan file PDF-nya dengan nama yang sama dengan file index.html ini, di folder yang sama, namanya <b>buku-kelas7.pdf</b>. Nanti web-nya otomatis cari file itu.</p>
+<h3>📚 BUKU ELEKTRONIK - <span class="txtBidang">Bahasa Indonesia</span> Kelas VII</h3>
+<p>Buku paket sudah tersimpan di folder yang sama dengan file ini. Nama file-nya harus <b>buku-kelas7.pdf</b> di folder yang sama dengan <b>index.html</b>.</p>
+<p><a href="buku-kelas7.pdf" target="_blank" style="display:inline-block;background:#1565c0;color:#fff;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:bold">📖 KLIK DI SINI UNTUK BUKA BUKU - TAB BARU</a> &nbsp; <a href="buku-kelas7.pdf" download style="display:inline-block;background:#2e7d32;color:#fff;padding:12px 16px;border-radius:8px;text-decoration:none;font-weight:bold">⬇️ DOWNLOAD BUKU</a></p>
+<p style="font-size:13px">Cara pakai di kelas: Klik tombol biru di atas, buku kebuka di tab baru, ketik nomor halaman di atas PDF (misal 139 untuk Berita Palsu), lalu tampilkan ke proyektor.</p>
+<p style="font-size:13px"><b>Daftar isi cepat - ketik nomor halaman ini di atas PDF:</b><br>Bab 1 Deskripsi hal. 1 | Pantan Terong hal. 4 | Pamflet Papandayan hal. 17 | Wae Rebo hal. 24 | Menyunting hal. 31<br>Bab 2 Puisi & Fantasi hal. 43 | Pantun hal. 46 | Cerita Fantasi hal. 52<br>Bab 3 Prosedur hal. 77 | Isi Piringku hal. 80 | Bekal Sehat hal. 104<br>Bab 4 Berita hal. 115 | 5W+1H hal. 132 | Berita Palsu / Hoaks hal. 139 | Menulis Berita hal. 144<br>Bab 5 Itam dan U hal. 155 | Itam dan U hal. 158 | Tanggapan Buku hal. 181<br>Bab 6 Surat hal. 193 | Surat Pribadi vs Resmi hal. 208 | Fakta & Opini hal. 222 | Menulis Surat hal. 230</p>
+<p><b>Preview di bawah ini (kalau masih putih, itu Chrome-nya yang nge-block, klik tombol biru di atas saja, pasti kebuka):</b></p>
+<iframe id="viewerBuku" style="width:100%;height:700px;border:2px solid #1565c0;border-radius:10px;background:#f5f5f5" src="buku-kelas7.pdf"></iframe>
+<div class="upload"><b>📤 Upload Buku Elektronik Lain / Revisi</b><br><span style="font-size:12px">Kalau ada buku revisi, upload di sini saja Bu.</span><br><br><input type="file" accept=".pdf" onchange="uploadFile('BUKU',this)"><div id="list-BUKU" style="margin-top:8px"></div></div>
 </div>
 </div>
 <script>
+// ===== PROFIL GURU & KEPSEK - TERSIMPAN OTOMATIS =====
+let PROFIL = JSON.parse(localStorage.getItem('profilGuru')||'null') || {namaGuru:'Hari Lasdiana, S.Pd', nipGuru:'1987041420252111118', bidang:'Bahasa Indonesia', sekolah:'SMPN 2 Cipongkor', namaKepsek:'Sumaroto, M.Pd', nipKepsek:'197208211998031003'};
+function terapkanProfil(){
+document.querySelectorAll('.txtGuru').forEach(e=>e.textContent=PROFIL.namaGuru);
+document.querySelectorAll('.txtNipGuru').forEach(e=>e.textContent=PROFIL.nipGuru);
+document.querySelectorAll('.txtBidang').forEach(e=>e.textContent=PROFIL.bidang);
+document.querySelectorAll('.txtSekolah').forEach(e=>e.textContent=PROFIL.sekolah);
+document.querySelectorAll('.txtKepsek').forEach(e=>e.textContent=PROFIL.namaKepsek);
+document.querySelectorAll('.txtNipKepsek').forEach(e=>e.textContent=PROFIL.nipKepsek);
+document.getElementById('inNamaGuru').value=PROFIL.namaGuru;
+document.getElementById('inNipGuru').value=PROFIL.nipGuru;
+document.getElementById('inBidang').value=PROFIL.bidang;
+document.getElementById('inSekolah').value=PROFIL.sekolah;
+document.getElementById('inNamaKepsek').value=PROFIL.namaKepsek;
+document.getElementById('inNipKepsek').value=PROFIL.nipKepsek;
+renderModul();renderLKPD();renderKisi();renderBank();
+}
+function masukAplikasi(){
+let n=document.getElementById('inNamaGuru').value.trim();
+let ng=document.getElementById('inNipGuru').value.trim();
+if(!n||!ng){alert('Isi dulu Bu, Nama Guru dan NIP Guru-nya.');return;}
+PROFIL={namaGuru:n,nipGuru:ng,bidang:document.getElementById('inBidang').value.trim()||'Bahasa Indonesia',sekolah:document.getElementById('inSekolah').value.trim()||'SMPN 2 Cipongkor',namaKepsek:document.getElementById('inNamaKepsek').value.trim()||'Sumaroto, M.Pd',nipKepsek:document.getElementById('inNipKepsek').value.trim()||''};
+localStorage.setItem('profilGuru',JSON.stringify(PROFIL));
+terapkanProfil();
+document.getElementById('splash').style.display='none';
+}
+function bukaProfil(){ document.getElementById('splash').style.display='flex'; window.scrollTo(0,0); }
+// Kalau sudah pernah isi, langsung tampilkan profilnya tapi tetap bisa diubah lewat tombol UBAH PROFIL
+// Pertama kali buka tetap muncul splash agar terkesan profesional
 const BAB=[
 {j:"Bab 1: Jelajah Nusantara",m:"Teks Deskripsi",hal:"1-42",sem:"Ganjil",jp:"24 JP (6 kali pertemuan)",cp:"Menganalisis informasi teks deskripsi untuk makna tersurat & tersirat; menulis teks deskripsi secara logis, kritis, kreatif.",promes:"Juli - Agustus 2026, Minggu 1-6 Semester Ganjil",
 subs:[{t:"A. Memahami Isi Teks Deskripsi",hal:"4",isi:"Membaca teks Pantan Terong yang Instagramable, menemukan gagasan utama & pesan penulis.",q:["Jelaskan pengertian teks deskripsi!","Sebutkan ciri-ciri teks deskripsi!","Jelaskan tujuan teks deskripsi!","Tuliskan gagasan utama teks Pantan Terong hal. 4!","Apa pesan penulis dalam teks Pantan Terong? Jelaskan dengan bahasamu sendiri!"]},{t:"B. Memahami Unsur Bahasa dalam Teks Deskripsi",hal:"9",isi:"Kata konkret, kalimat perincian, majas personifikasi, sapaan di media sosial.",q:["Jelaskan pengertian kata konkret! Beri 3 contoh dari teks hal. 9!","Apa yang dimaksud kalimat perincian? Tulis 2 contohnya!","Jelaskan majas personifikasi! Tulis 2 contoh dari teks!","Mengapa penulis menggunakan sapaan akrab di media sosial?","Tulis 1 paragraf deskripsi tentang tempat favoritmu, gunakan kata konkret dan kalimat perincian!"]},{t:"C. Menganalisis Teks Deskripsi dalam Sajian Visual",hal:"16",isi:"Menganalisis pamflet wisata Papandayan & Green Canyon, kelengkapan & daya tarik visual.",q:["Sebutkan isi pamflet wisata Papandayan hal. 17!","Apa saja yang harus ada dalam pamflet wisata yang baik?","Bandingkan pamflet Papandayan dan Green Canyon! Mana yang lebih menarik? Mengapa?","Apa fungsi gambar / foto dalam pamflet wisata?","Buatlah pamflet wisata sederhana tentang tempat di Cipongkor!"]},{t:"D. Menganalisis Informasi Lisan",hal:"24",isi:"Menyimak 2 teks deskripsi lisan (berita vs vlog Wae Rebo), membandingkan tujuan & pandangan penutur.",q:["Apa perbedaan teks deskripsi lisan berita dan vlog?","Apa tujuan penutur dalam teks berita Wae Rebo?","Apa tujuan penutur dalam vlog Wae Rebo?","Bandingkan pilihan kata kedua penutur tersebut!","Menurutmu, teks mana yang lebih membuat orang ingin berkunjung? Mengapa?"]},{t:"E. Menyunting Teks Deskripsi",hal:"31",isi:"Tantangan Redaksi: menyunting ejaan, tanda baca, kata depan.",q:["Sebutkan 5 kesalahan ejaan yang kamu temukan dalam teks hal. 31!","Bagaimana cara menulis kata depan di / ke yang benar?","Perbaiki kalimat berikut: 'di mana rumah mu?'","Apa fungsi tanda koma dalam teks deskripsi?","Sunting paragraf hal. 31 hingga ejaannya benar semua!"]},{t:"F. Menyajikan Teks Deskripsi Sederhana",hal:"34",isi:"Proyek menulis & Galeri Wicara: presentasi teks deskripsi karya sendiri.",q:["Tulis kerangka teks deskripsi tentang benda favoritmu!","Kembangkan kerangka tersebut menjadi 3 paragraf!","Apa yang harus diperhatikan saat mempresentasikan teks deskripsi?","Tuliskan tanggapanmu untuk presentasi temanmu!","Apa hal yang paling kamu pelajari dari Bab Teks Deskripsi ini?"]}],
@@ -212,6 +256,80 @@ subs:[{t:"A. Mengenal Jenis Surat dan Media Sosial",hal:"201",isi:"Jenis surat, 
 atp:["Menganalisis informasi surat pribadi & resmi.","Membandingkan unsur, tujuan & bahasa surat.","Menggunakan kosakata baru dari surat resmi.","Menganalisis sapaan & pronomina.","Menulis pesan singkat kepada guru secara santun.","Menginterpretasi ruang bincang daring.","Mengevaluasi kredibilitas dengan fakta & opini.","Menulis surat resmi dengan kosakata baku.","Menulis surat pribadi untuk sahabat."],
 lkpd:"1. Bandingkan surat pribadi vs resmi hal.208-211. 2. Analisis pesan WA hal.213-219. 3. Tulis surat resmi ke Kepsek + surat pribadi.",
 pertemuan:[{judul:"PERTEMUAN 1-6 - SESUAI SUBTOPIK BUKU",topik:"Surat Pribadi, Resmi & Media Sosial",isi:`<p><b>PENDAHULUAN:</b> Salam, doa, presensi, apersepsi chat WA. <b>INTI:</b> Mindful: Amati contoh surat & chat. Meaningful: Bandingkan surat hal.208-211, analisis ruang bincang hal.222-228. Joyful: Tulis surat resmi + pesan ajakan peduli lingkungan. <b>PENUTUP:</b> Refleksi, rangkuman, salam & doa.</p>`}]}
+];
+const BANK=[
+{pg:[
+{q:"Bacalah kutipan teks berikut: 'Pantan Terong menawarkan pemandangan Gayo yang indah, udara sejuk, dan kopi yang nikmat.' Gagasan utama kutipan tersebut adalah...",a:["Keindahan Pantan Terong sebagai tempat wisata","Cara membuat kopi Gayo","Sejarah Kabupaten Gayo","Harga tiket masuk Pantan Terong"],k:0},
+{q:"Kalimat berikut yang termasuk kalimat perincian adalah...",a:["Pantan Terong terletak di dataran tinggi Gayo yang sejuk dan hijau.","Pantan Terong itu indah.","Saya suka Pantan Terong.","Ayo ke Pantan Terong!"],k:0},
+{q:"Kata 'Instagramable' pada teks Pantan Terong hal. 4 bermakna...",a:["Bagus untuk difoto dan diunggah di media sosial","Tempat yang mahal","Tempat yang sepi","Tempat yang sulit dijangkau"],k:0},
+{q:"Yang termasuk ciri teks deskripsi adalah...",a:["Menggambarkan objek secara jelas dan terperinci","Menceritakan urutan kejadian","Memberi perintah langkah demi langkah","Menyampaikan berita terbaru"],k:0},
+{q:"Majas pada kalimat 'Angin berbisik lembut di telingaku' adalah...",a:["Personifikasi","Hiperbola","Metafora","Simile"],k:0},
+{q:"Pamflet wisata Papandayan hal. 17 harus memuat informasi berikut, KECUALI...",a:["Nama mantan pacar penulis pamflet","Lokasi wisata","Harga tiket","Nomor kontak / cara menuju lokasi"],k:0},
+{q:"Perbedaan teks deskripsi lisan dalam berita dan dalam vlog Wae Rebo adalah...",a:["Berita bersifat formal dan objektif, vlog bersifat personal dan persuasif","Keduanya sama-sama formal","Berita lebih lucu dari vlog","Vlog tidak boleh berisi deskripsi"],k:0},
+{q:"Kesalahan ejaan pada kalimat 'di mana rumahmu?' yang benar adalah...",a:["'di mana' ditulis terpisah karena menunjukkan tempat","'dimana' ditulis serangkai","'di mana' ditulis pakai huruf besar semua","Tidak ada yang salah"],k:0},
+{q:"Tujuan penulis menulis teks deskripsi Pantan Terong adalah...",a:["Agar pembaca tertarik dan ingin berkunjung ke Pantan Terong","Agar pembaca takut ke Pantan Terong","Agar pembaca membeli kopi saja","Agar pembaca pindah rumah"],k:0},
+{q:"Kata konkret dari teks deskripsi adalah kata yang...",a:["Bisa dilihat, didengar, diraba, dirasa, dan dicium","Hanya bisa dibayangkan","Tidak jelas maknanya","Berasal dari bahasa asing"],k:0}
+],essay:["Jelaskan pengertian teks deskripsi! Tuliskan 3 ciri-cirinya!","Sebutkan isi pamflet wisata Papandayan hal. 17! Apa yang membuat pamflet itu menarik?","Bandingkan teks deskripsi lisan berita dan vlog tentang Wae Rebo! Mana yang lebih membuatmu ingin berkunjung? Mengapa?","Sunting paragraf hal. 31 hingga ejaan dan tanda bacanya benar semua!","Tulis teks deskripsi 3 paragraf tentang tempat favoritmu di Cipongkor! Gunakan kata konkret dan kalimat perincian!"]},
+{pg:[
+{q:"Pantun terdiri dari...",a:["4 baris, sampiran 2 baris pertama, isi 2 baris terakhir","2 baris saja","8 baris","1 bait 10 baris"],k:0},
+{q:"Ciri syair adalah...",a:["Semua baris adalah isi, bersajak a-a-a-a","Baris 1-2 sampiran, baris 3-4 isi","Tidak bersajak","Hanya berisi nasihat"],k:0},
+{q:"Gurindam berisi...",a:["Nasihat, 2 baris, 1 bait 2 baris, sajak a-a","Pantun jenaka","Cerita fantasi","Doa"],k:0},
+{q:"Tokoh utama dalam cerita fantasi hal. 52 adalah tokoh yang...",a:["Paling banyak muncul dan menggerakkan jalan cerita","Hanya muncul 1 kali","Tidak punya sifat","Tidak penting"],k:0},
+{q:"Latar dalam cerita fantasi meliputi...",a:["Tempat, waktu, dan suasana cerita","Nama pengarang saja","Judul saja","Harga buku"],k:0},
+{q:"Kalimat langsung yang benar adalah...",a:["'Aku akan pergi ke dunia imajinasi,' kata Mira.","Mira berkata aku akan pergi.","Aku akan pergi kata Mira.","Mira: akan pergi."],k:0},
+{q:"Kalimat tak langsung dari 'Budi berkata, \"Saya suka membaca puisi.\"' adalah...",a:["Budi berkata bahwa ia suka membaca puisi.","Budi berkata, 'Saya suka membaca puisi.'","Budi berkata suka membaca puisi?","Budi: Saya suka membaca puisi."],k:0},
+{q:"Kata kiasan pada kalimat 'Hatinya sekeras batu' adalah...",a:["Keras hati, sulit dinasihati","Hati terbuat dari batu","Hati sakit","Hati berwarna abu-abu"],k:0},
+{q:"Agar cerita fantasi menarik, yang harus ada adalah...",a:["Tokoh yang jelas, latar imajinatif, alur yang logis, dan pesan moral","Hanya nama tokoh saja","Tidak perlu alur","Hanya gambar saja"],k:0},
+{q:"Pesan moral dari cerita fantasi adalah...",a:["Pelajaran baik yang bisa diambil pembaca dari cerita","Nama tokohnya","Tempat cerita","Judul cerita"],k:0}
+],essay:["Jelaskan perbedaan pantun, syair, dan gurindam! Beri masing-masing 1 contoh!","Tentukan tokoh, latar, dan alur cerita fantasi hal. 52!","Ubahlah 3 kalimat langsung hal. 60 menjadi kalimat tak langsung!","Buatlah 1 bait pantun nasihat tentang menjaga lingkungan!","Tulis cerita fantasi 300 kata tentang dunia imajinasimu! Tentukan tokoh, latar, dan pesannya!"]},
+{pg:[
+{q:"Teks prosedur bertujuan untuk...",a:["Memberi petunjuk cara melakukan sesuatu secara urut","Menceritakan dongeng","Memberi berita terbaru","Menggambarkan keindahan tempat"],k:0},
+{q:"Struktur teks prosedur yang benar adalah...",a:["Tujuan - Bahan/Alat - Langkah-langkah - Penutup","Judul - Tokoh - Alur","Pembuka - Isi - Penutup saja","Sampiran - Isi"],k:0},
+{q:"Isi Piringku hal. 80 menganjurkan porsi makan yang seimbang, yaitu...",a:["Sayur, buah, karbohidrat, dan protein dalam porsi seimbang","Hanya nasi saja","Hanya daging saja","Tidak perlu makan sayur"],k:0},
+{q:"Kalimat ajakan yang tepat untuk hidup sehat adalah...",a:["Ayo, biasakan sarapan dengan bekal sehat!","Jangan pernah sarapan!","Dilarang makan sayur!","Tidak usah olahraga!"],k:0},
+{q:"Kalimat larangan yang tepat di laboratorium adalah...",a:["Dilarang makan dan minum di dalam laboratorium!","Silakan berlari di laboratorium!","Boleh bermain api di laboratorium!","Wajib membawa makanan ke laboratorium!"],k:0},
+{q:"Kalimat pelesapan / kalimat inversi pada teks prosedur contohnya...",a:["Siapkan bahan-bahannya terlebih dahulu.","Bahan-bahannya siapkan terlebih dahulu.","Bahan-bahannya adalah...","Saya siapkan bahan."],k:0},
+{q:"Infografik Bekal Sehat yang baik harus memuat...",a:["Bahan, langkah, dan gambar yang jelas dan mudah dipahami","Hanya gambar tanpa tulisan","Hanya tulisan tanpa gambar","Warna yang sangat gelap hingga tidak terbaca"],k:0},
+{q:"Mengapa langkah-langkah dalam teks prosedur harus urut?",a:["Agar hasilnya sesuai dan tidak gagal","Agar lebih panjang","Agar lebih sulit","Agar tidak perlu dibaca"],k:0},
+{q:"Kata 'adverbia' dalam teks prosedur berfungsi untuk...",a:["Menjelaskan cara, waktu, atau tempat melakukan langkah","Menyebut nama orang","Menggantikan kata benda","Menyatakan perasaan"],k:0},
+{q:"Jika kamu membuat teks prosedur 'Cara Membuat Bekal Sehat', bahan yang perlu ditulis adalah...",a:["Nasi, sayur, lauk, buah, dan tempat bekal","Hanya nama sekolah","Hanya nama guru","Hanya harga bekal"],k:0}
+],essay:["Jelaskan pengertian teks prosedur! Sebutkan 3 ciri dan strukturnya!","Tuliskan struktur teks prosedur Isi Piringku hal. 80!","Tulis 3 kalimat ajakan dan 3 kalimat larangan untuk hidup sehat!","Buat teks prosedur 'Cara Membuat Bekal Sehat' lengkap dengan bahan dan langkah!","Buat infografik Bekal Sehatmu! Apa saja yang harus ada di dalamnya?"]},
+{pg:[
+{q:"Teks berita bertujuan untuk...",a:["Menyampaikan informasi peristiwa yang benar-benar terjadi","Menceritakan dongeng","Memberi perintah memasak","Menggambarkan tempat wisata saja"],k:0},
+{q:"Unsur 5W+1H dalam berita adalah...",a:["What, Who, When, Where, Why, How","Who, When, What, Where, Why, Who","What, When, Why, How, Where, What","Who, What, Why, When, Where, When"],k:0},
+{q:"'What' dalam 5W+1H menanyakan...",a:["Apa yang terjadi / peristiwa apa","Siapa yang terlibat","Kapan terjadi","Di mana terjadi"],k:0},
+{q:"Teras berita berfungsi untuk...",a:["Menyampaikan inti berita secara singkat di awal","Menutup berita","Memberi gambar saja","Memberi iklan"],k:0},
+{q:"Judul berita yang baik adalah...",a:["Singkat, jelas, menarik, dan sesuai isi berita","Sangat panjang dan tidak jelas","Tidak sesuai isi berita","Menggunakan bahasa yang menyinggung"],k:0},
+{q:"Perbedaan berita cetak dan berita daring adalah...",a:["Berita cetak terbit di koran/majalah, berita daring terbit di internet dan bisa diperbarui cepat","Keduanya sama persis","Berita daring tidak bisa dibaca","Berita cetak tidak ada judul"],k:0},
+{q:"Ciri berita palsu / hoaks adalah...",a:["Judul provokatif, sumber tidak jelas, tidak ada bukti, dan memancing emosi","Sumber jelas dan bisa dicek","Bahasa baku dan sopan","Ada tanggal dan penulis yang jelas"],k:0},
+{q:"Cara mengecek kebenaran berita hal. 139 adalah...",a:["Cek sumbernya, bandingkan dengan media terpercaya, cek tanggal dan penulisnya","Langsung bagikan ke semua grup WA","Percaya saja karena viral","Lihat jumlah like-nya saja"],k:0},
+{q:"Mengapa berita palsu berbahaya?",a:["Bisa menimbulkan kepanikan, fitnah, dan perpecahan","Bisa membuat kita pintar","Bisa membuat kita sehat","Tidak ada bahayanya"],k:0},
+{q:"Kalimat majemuk adalah kalimat yang...",a:["Terdiri dari 2 kalimat atau lebih yang digabung dengan konjungsi","Hanya 1 kalimat saja","Tidak ada subjek","Tidak ada predikat"],k:0}
+],essay:["Jelaskan pengertian teks berita! Sebutkan 3 ciri-cirinya!","Tuliskan 5W+1H dari berita hal. 132!","Sebutkan 5 ciri berita palsu! Bagaimana cara mengecek kebenaran berita hal. 139?","Temukan 1 berita di HP-mu, cek apakah benar atau hoaks! Tulis buktinya!","Tulis berita eksplanasi tentang lingkungan di Cipongkor! Lengkapi dengan 5W+1H!"]},
+{pg:[
+{q:"Buku 'Itam dan U' hal. 158 termasuk jenis buku...",a:["Buku bergambar / buku anak","Buku kamus","Buku telepon","Buku rekening"],k:0},
+{q:"Dari sampul buku Itam dan U, kita bisa memprediksi...",a:["Gambaran isi, tokoh, dan suasana cerita","Harga buku di toko lain","Nama penjual buku","Jumlah halaman buku lain"],k:0},
+{q:"Suasana dalam buku Itam dan U dapat diketahui dari...",a:["Gambar, warna, ekspresi tokoh, dan pilihan kata","Harga buku saja","Nama penerbit saja","Tebal buku saja"],k:0},
+{q:"Bagian buku yang berisi daftar bab dan halamannya adalah...",a:["Daftar isi","Sampul depan","Biodata penulis","Kata pengantar saja"],k:0},
+{q:"Perbedaan buku fiksi dan nonfiksi adalah...",a:["Fiksi berisi khayalan, nonfiksi berisi kenyataan","Keduanya sama-sama khayalan","Fiksi lebih tebal","Nonfiksi tidak ada gambar"],k:0},
+{q:"Rangkuman yang baik harus memuat...",a:["Gagasan pokok setiap bagian, singkat, jelas, dan sesuai isi buku","Semua kalimat buku disalin semua","Hanya judulnya saja","Pendapat yang tidak sesuai buku"],k:0},
+{q:"Peta pikiran / mind map berguna untuk...",a:["Memetakan gagasan pokok dan pendukung agar mudah dipahami","Menggambar peta Indonesia","Mencari alamat","Menghitung nilai"],k:0},
+{q:"Teks tanggapan buku berisi...",a:["Identitas buku, rangkuman, kelebihan, kekurangan, dan rekomendasi","Hanya harga buku","Hanya nama penulis","Hanya jumlah halaman"],k:0},
+{q:"Kelebihan buku Itam dan U yang bisa ditulis dalam tanggapan adalah...",a:["Gambarnya menarik, ceritanya mudah dipahami, dan pesannya baik","Harganya mahal","Bukunya berat","Bukunya robek"],k:0},
+{q:"Struktur teks tanggapan yang benar adalah...",a:["Identitas buku - Rangkuman - Tanggapan / Penilaian - Rekomendasi","Sampiran - Isi","Tujuan - Bahan - Langkah","Pembuka - Tokoh - Alur"],k:0}
+],essay:["Prediksi isi buku Itam dan U dari sampulnya! Siapa tokohnya? Bagaimana sifatnya?","Sebutkan bagian-bagian buku! Apa fungsi sampul dan daftar isi?","Buat peta pikiran buku Itam dan U! Tulis rangkumannya dalam 1 paragraf!","Tulis tanggapanmu tentang buku Itam dan U! Sebutkan kelebihan dan kekurangannya!","Tulis teks tanggapan tentang buku favoritmu! Gunakan struktur yang benar!"]},
+{pg:[
+{q:"Surat pribadi ditulis untuk...",a:["Menyampaikan kabar / pesan pribadi kepada sahabat atau keluarga","Melamar pekerjaan ke perusahaan","Mengajukan proposal ke pemerintah","Memberi pengumuman resmi sekolah"],k:0},
+{q:"Surat resmi ditulis untuk...",a:["Keperluan resmi kepada instansi / pejabat dengan bahasa baku","Curhat kepada sahabat","Mengirim pesan singkat ke teman","Mengirim meme lucu"],k:0},
+{q:"Unsur surat resmi yang TIDAK ada pada surat pribadi adalah...",a:["Nomor surat, kop surat, dan stempel / tanda tangan resmi","Salam pembuka","Isi surat","Salam penutup"],k:0},
+{q:"Kata baku dari 'apotik' adalah...",a:["Apotek","Apotik","Aphotek","Apotiq"],k:0},
+{q:"Kata baku dari 'jadwal' yang tidak baku adalah...",a:["Jadwal adalah kata baku, 'jadual' tidak baku","Jadual adalah kata baku","Jadual dan jadwal sama-sama baku","Tidak ada yang baku"],k:0},
+{q:"Sapaan yang santun kepada guru dalam pesan WA adalah...",a:["Assalamu'alaikum, Bu. Maaf mengganggu, saya Hari, izin bertanya...","Woy, Bu!","Hei, Bu!","Bu, mana tugasnya? Cepat!"],k:0},
+{q:"Pronomina / kata ganti orang pertama tunggal adalah...",a:["Saya / aku","Kamu","Mereka","Beliau"],k:0},
+{q:"Fakta adalah pernyataan yang...",a:["Benar-benar terjadi dan bisa dibuktikan kebenarannya","Hanya pendapat seseorang","Tidak bisa dibuktikan","Hanya perasaan"],k:0},
+{q:"Opini adalah pernyataan yang...",a:["Berupa pendapat / penilaian seseorang, belum tentu benar bagi semua orang","Pasti benar dan bisa dibuktikan","Berupa angka dan data","Berupa tanggal kejadian"],k:0},
+{q:"Kalimat berikut yang termasuk opini adalah...",a:["Menurut saya, Tim Duta Adiwiyata adalah tim yang paling hebat.","Tim Duta Adiwiyata beranggotakan 10 siswa.","Kegiatan dilaksanakan pada hari Senin.","Sekolah kita terletak di Cipongkor."],k:0}
+],essay:["Jelaskan perbedaan surat pribadi dan surat resmi! Sebutkan unsur masing-masing!","Sebutkan 5 kata tidak baku dalam surat hal. 211, ubah menjadi kata baku!","Tulis pesan WA kepada guru dengan sapaan yang santun! Gunakan pronomina yang tepat!","Tulis 2 kalimat fakta dan 2 kalimat opini dari ruang bincang hal. 222!","Tulis surat resmi kepada Kepala Sekolah dan surat pribadi untuk sahabatmu! Gunakan bahasa yang tepat!"]}
 ];
 function show(n){for(let i=1;i<=13;i++){document.getElementById('p'+i).style.display=i==n?'block':'none';document.getElementById('t'+i).className=i==n?'on':'';}}
 function setCari(v){document.getElementById('cari').value=v;renderCari();}
@@ -271,43 +389,41 @@ let subT=document.getElementById('subLKPD').value;
 let sub=d.subs.find(s=>s.t==subT)||d.subs[0];
 let nomor=(bi+1)+'.'+(d.subs.indexOf(sub)+1);
 document.getElementById('lkpdPaper').innerHTML=`
-<div class="lkpd-header"><h1>LKPD ${nomor}</h1><h2>BAHASA INDONESIA KELAS VII</h2><h3>UNIT PEMBELAJARAN<br>${d.m} - ${sub.t}</h3></div>
+<div class="lkpd-header"><h1>LKPD ${nomor}</h1><h2>${PROFIL.bidang.toUpperCase()} KELAS VII</h2><h3>UNIT PEMBELAJARAN<br>${d.m} - ${sub.t}</h3></div>
 <p><b>Nama :</b> ........................................................ <b>Kelas :</b> ............ <b>Tanggal :</b> ....................</p>
 <p><b>Petunjuk Kerja:</b></p><p>1. &nbsp; Masing-masing peserta didik membaca materi ${d.j} - ${sub.t} Buku hal. ${sub.hal}.</p><p>2. &nbsp; Peserta didik menjawab LKPD dengan baik.</p><p>3. &nbsp; LKPD ini merupakan kisi-kisi UTS, mohon dikerjakan!</p>
 <p><b>TUGAS</b><br>Ayo Semangat Kalian jawab pertanyaan berikut!</p>
 ${sub.q.map((qq,i)=>`<p class="lkpd-soal">${i+1}. &nbsp; ${qq}</p><div class="lkpd-jawab"></div>`).join('')}
 <p style="margin-top:20px"><b>Nilai:</b> ............ &nbsp; <b>KKTP:</b> ☐ Tuntas (66-100) &nbsp; ☐ Remidi (&lt;66) &nbsp; ☐ Pengayaan (&gt;86)</p>
-<div class="ttd"><div>Cipongkor, ....................<br>Guru Mata Pelajaran<br><div class="garis"></div><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118</div><div>Paraf Orang Tua<br><div class="garis"></div>( ............................ )</div></div>
-<p style="font-size:10pt;text-align:center;margin-top:16px">LKPD Bahasa Indonesia Kelas 7 - SMPN 2 Cipongkor | ${d.j} - ${sub.t} - Buku hal. ${sub.hal}</p>`;
+<div class="ttd"><div>Cipongkor, ....................<br>Guru Mata Pelajaran<br><div class="garis"></div><b>${PROFIL.namaGuru}</b><br>NIP. ${PROFIL.nipGuru}</div><div>Paraf Orang Tua<br><div class="garis"></div>( ............................ )</div></div>
+<p style="font-size:10pt;text-align:center;margin-top:16px">LKPD ${PROFIL.bidang} Kelas 7 - ${PROFIL.sekolah} | ${d.j} - ${sub.t} - Buku hal. ${sub.hal}</p>`;
 }
 function renderKisi(){
 let bi=+document.getElementById('babKisi').value;let d=BAB[bi];
-let rows=d.subs.map((s,i)=>`<tr><td>${i+1}</td><td>${s.t} - hal. ${s.hal}</td><td>${s.isi}</td><td>PG + Essay</td><td>4 PG + 1 Essay</td><td>C2-C4</td></tr>`).join('');
+let rows=d.subs.map((s,i)=>`<tr><td>${i+1}</td><td>${s.t} - hal. ${s.hal}</td><td>${s.isi}</td><td>PG / Essay</td><td>Diambil 1-2 soal dari subtopik ini</td><td>C2-C4</td></tr>`).join('');
 document.getElementById('kisiPaper').innerHTML=`
-<div class="paper" style="min-height:auto"><h1>KISI-KISI SOAL</h1><h2>SUMATIF TENGAH / AKHIR SEMESTER - BAHASA INDONESIA KELAS VII</h2><p style="text-align:center">SMPN 2 Cipongkor | Tahun 2026/2027 | ${d.j} - ${d.m} | Buku hal. ${d.hal} | Semester ${d.sem}</p>
+<div class="paper" style="min-height:auto"><h1>KISI-KISI SOAL</h1><h2>SUMATIF TENGAH / AKHIR SEMESTER - ${PROFIL.bidang.toUpperCase()} KELAS VII</h2><p style="text-align:center">${PROFIL.sekolah} | Tahun 2026/2027 | ${d.j} - ${d.m} | Buku hal. ${d.hal} | Semester ${d.sem}</p>
 <table class="lampiran"><tr><th>No</th><th>Materi / Subtopik</th><th>Indikator Soal</th><th>Bentuk</th><th>Jumlah</th><th>Level</th></tr>${rows}</table>
-<p><b>Total: ${d.subs.length*4} PG + ${d.subs.length} Essay = ${d.subs.length*5} Soal</b> | Waktu: 80 Menit | KKTP: 66% = Tuntas | Penyusun: Hari Lasdiana, S.Pd</p>
+<p><b>Total Per Bab: 10 PG + 5 Essay = 15 Soal</b> | Waktu: 60 Menit | KKTP: 66% = Tuntas | Penyusun: ${PROFIL.namaGuru}</p>
 <p><b>Catatan untuk Siswa:</b> Pelajari LKPD ${d.j}, Buku hal. ${d.hal}, dan contoh di buku. Soal diambil dari indikator di atas.</p></div>`;
 }
 function renderBank(){
-let bi=+document.getElementById('babBank').value;let d=BAB[bi];
+let bi=+document.getElementById('babBank').value;let d=BAB[bi];let B=BANK[bi];
 let jenis=document.getElementById('jenisBank').value;let kunci=document.getElementById('tampilKunci').checked;
-let pg=[];let essay=[];
-d.subs.forEach(s=>{ s.q.forEach((qq,qi)=>{ if(qi<4) pg.push({q:qq,sub:s.t,hal:s.hal}); else essay.push({q:qq,sub:s.t,hal:s.hal}); }); });
-let html=`<h1>BANK SOAL - ${d.j.toUpperCase()}</h1><h2>${d.m} | Buku hal. ${d.hal} | SMPN 2 Cipongkor</h2><p>Nama: .................... Kelas: ............ Tanggal: ............ Nilai: ............</p>`;
+let html=`<h1>BANK SOAL - ${d.j.toUpperCase()}</h1><h2>${d.m} | Buku hal. ${d.hal} | ${PROFIL.sekolah}</h2><p>Nama: .................... Kelas: ............ Tanggal: ............ Nilai: ............</p>`;
 if(jenis=='pg'||jenis=='all'){
-html+=`<h3>A. PILIHAN GANDA - Pilih jawaban yang paling tepat! (${Math.min(pg.length,20)} Soal)</h3>`;
-pg.slice(0,20).forEach((s,i)=>{
-let opts=["A. "+s.q,"B. Jawaban kurang tepat, masih perlu dilengkapi","C. Jawaban tidak sesuai dengan teks di buku hal. "+s.hal,"D. Jawaban di luar topik "+s.sub];
-html+=`<p><b>${i+1}. ${s.q}</b> <span style="font-size:10pt">( ${s.sub} - hal. ${s.hal} )</span><br>${opts.join('<br>')}<br>Jawaban: ........</p>`;
+html+=`<h3>A. PILIHAN GANDA - Pilih jawaban yang paling tepat! (10 Soal - Sesuai Buku Paket)</h3>`;
+B.pg.forEach((s,i)=>{
+html+=`<p><b>${i+1}. ${s.q}</b><br>A. ${s.a[0]}<br>B. ${s.a[1]}<br>C. ${s.a[2]}<br>D. ${s.a[3]}<br>Jawaban: ........</p>`;
 });
 }
 if(jenis=='essay'||jenis=='all'){
-html+=`<h3>B. ESSAY / URAIAN - Jawab dengan kalimat lengkap! (${essay.length} Soal)</h3>`;
-essay.forEach((s,i)=>{ html+=`<p><b>${i+1}. ${s.q}</b> <span style="font-size:10pt">( ${s.sub} - hal. ${s.hal} )</span></p><div style="border:1px solid #000;min-height:60px;margin:6px 0"></div>`; });
+html+=`<h3>B. ESSAY / URAIAN - Jawab dengan kalimat lengkap! (5 Soal - Sesuai Buku Paket)</h3>`;
+B.essay.forEach((s,i)=>{ html+=`<p><b>${i+1}. ${s}</b></p><div style="border:1px solid #000;min-height:60px;margin:6px 0"></div>`; });
 }
 if(kunci){
-html+=`<div style="border:2px dashed #000;padding:10px;margin-top:20px;background:#fff8e1"><h3>🔑 KUNCI JAWABAN - UNTUK GURU, JANGAN DIBAGIKAN KE SISWA</h3><p><b>Pilihan Ganda:</b> Jawaban yang benar untuk semua PG di atas adalah <b>A</b>, karena A adalah pertanyaan LKPD yang sesuai dengan materi buku hal. ${d.hal}. Guru dapat mengacak opsi A-D saat print untuk siswa.</p><p><b>Essay:</b> Nilai dengan Rubrik: Isi 40, Struktur 30, Bahasa 20, Ejaan 10. Total 100. KKTP 66% = Tuntas.</p><p><b>Indikator:</b> Lihat Kisi-Kisi ${d.j} di tombol 📋 KISI-KISI.</p></div>`;
+let kunciPG = B.pg.map((s,i)=>`${i+1}. ${['A','B','C','D'][s.k]}`).join(' &nbsp; | &nbsp; ');
+html+=`<div style="border:2px dashed #000;padding:10px;margin-top:20px;background:#fff8e1"><h3>🔑 KUNCI JAWABAN - UNTUK GURU, JANGAN DIBAGIKAN KE SISWA</h3><p><b>PG:</b> ${kunciPG}</p><p><b>Essay:</b> Nilai dengan Rubrik: Isi 40, Struktur 30, Bahasa 20, Ejaan 10. Total 100. KKTP 66% = Tuntas.</p><p><b>Sumber Soal:</b> Semua soal diambil dari ${d.j} - ${d.m}, Buku hal. ${d.hal}. Lihat Kisi-Kisi di tombol 📋 KISI-KISI.</p></div>`;
 }
 document.getElementById('bankPaper').innerHTML=html;
 }
@@ -362,26 +478,6 @@ document.getElementById('listJurnalPelajaran').innerHTML = arr.length==0 ? '<p>B
 }
 function hapusJurnalPelajaran(i){ if(!confirm('Hapus jurnal ini Bu?')) return; let arr=JSON.parse(localStorage.getItem('jurnalPelajaran')||'[]'); arr.splice(i,1); localStorage.setItem('jurnalPelajaran',JSON.stringify(arr)); tampilJurnalPelajaran(); }
 function cetakJurnalPelajaran(){ show(12); tampilJurnalPelajaran(); setTimeout(function(){window.print();},300); }
-let urlBuku = localStorage.getItem('urlBuku') || '';
-function uploadBuku(input){
-let file = input.files[0]; if(!file) return;
-if(file.size > 8000000){ alert('File-nya besar Bu, di atas 8MB. Pakai Cara 1 ya Bu: simpan file PDF-nya dengan nama buku-kelas7.pdf di folder yang sama dengan file index.html ini, lalu refresh.'); return; }
-let reader = new FileReader();
-reader.onload = function(e){ urlBuku = e.target.result; try{ localStorage.setItem('urlBuku', urlBuku); }catch(err){} tampilBuku(); alert('Berhasil Bu! Buku sudah tersimpan. Besok buka lagi di laptop yang sama, buku langsung kebuka.'); };
-reader.readAsDataURL(file);
-}
-function tampilBuku(){
-let v = document.getElementById('viewerBuku'); if(!v) return;
-if(urlBuku){ v.src = urlBuku; document.getElementById('infoBuku').innerHTML = '✅ Buku sudah tersimpan. Tinggal klik tombol Lompat ke Bab di bawah.'; }
-else { v.src = 'buku-kelas7.pdf'; document.getElementById('infoBuku').innerHTML = 'Belum ada buku yang di-upload. Silakan upload di atas, atau simpan file PDF dengan nama <b>buku-kelas7.pdf</b> di folder yang sama.'; }
-}
-function lompatBuku(hal){
-if(!urlBuku && !document.getElementById('viewerBuku').src){ alert('Upload dulu bukunya Bu di atas, baru bisa lompat halaman.'); return; }
-let base = urlBuku ? urlBuku.split('#')[0] : 'buku-kelas7.pdf';
-document.getElementById('viewerBuku').src = base + '#page=' + hal;
-document.getElementById('halBuku').value = hal;
-}
-function bukaBukuTabBaru(){ if(urlBuku){ window.open(urlBuku, '_blank'); } else { window.open('buku-kelas7.pdf', '_blank'); } }
 function renderModul(){
 let bi=+document.getElementById('bab').value;let d=BAB[bi];
 let simpanSub=document.getElementById('subtopik').value;
@@ -394,10 +490,10 @@ document.getElementById('cekIntegrasi').innerHTML=`<b>✅ CEK INTEGRASI - Modul 
 let pil=document.getElementById('pertemuan').value;let list=d.pertemuan;if(pil!=="all")list=[d.pertemuan[+pil-1]];
 let ph=list.map(p=>`<div class="pertemuan"><h4>${p.judul}</h4><p><b>${p.topik}</b></p>${p.isi}</div>`).join('');
 document.getElementById('paper').innerHTML=`
-<div class="cover"><h1>PERANGKAT AJAR TERPADU</h1><h2>BAHASA INDONESIA KELAS VII</h2><p><b>SMPN 2 CIPONGKOR</b><br>Tahun Pelajaran 2026/2027<br><br>Disusun Oleh:<br><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118</p></div>
-<h1>MODUL AJAR DEEP LEARNING</h1><h1>MATA PELAJARAN : BAHASA INDONESIA</h1><h2>${d.j.toUpperCase()}</h2>
-<div class="kotak"><b>KETERKAITAN DOKUMEN - TERINTEGRASI:</b> Modul ini disusun berdasarkan CP Nomor 46 Tahun 2025, dijabarkan dalam ${d.atp.length} ATP Bab ini, sesuai PROTA Semester ${d.sem} Tahun 2026/2027, dilaksanakan pada PROMES ${d.promes}, dan dinilai dengan KKTP Tuntas 66% (lihat Bagian G). Buku sumber: Bahasa Indonesia Kelas VII Edisi Revisi, hal. ${d.hal}.</div>
-<h3>A. IDENTITAS MODUL - TERINTEGRASI PROTA & PROMES</h3><div class="ident"><table><tr><td>Nama Sekolah</td><td>:</td><td><b>SMPN 2 Cipongkor</b></td></tr><tr><td>Nama Penyusun</td><td>:</td><td><b>Hari Lasdiana, S.Pd</b></td></tr><tr><td>Mata Pelajaran</td><td>:</td><td><b>Bahasa Indonesia</b></td></tr><tr><td>Kelas / Fase / Semester</td><td>:</td><td><b>${document.getElementById('kelas').value} / D / ${d.sem} (PROTA)</b></td></tr><tr><td>Alokasi Waktu</td><td>:</td><td><b>${d.jp} (PROTA)</b></td></tr><tr><td>Jadwal Pelaksanaan (PROMES)</td><td>:</td><td><b>${d.promes}</b></td></tr><tr><td>Tahun Pelajaran</td><td>:</td><td><b>2026 / 2027</b></td></tr><tr><td>Buku Sumber</td><td>:</td><td><b>Bahasa Indonesia Kelas VII Edisi Revisi, hal. ${d.hal} - ${d.m}</b></td></tr><tr><td>Subtopik Buku</td><td>:</td><td><b>${sub.t} - hal. ${sub.hal} - ${sub.isi}</b></td></tr></table></div>
+<div class="cover"><h1>PERANGKAT AJAR TERPADU</h1><h2>${PROFIL.bidang.toUpperCase()} KELAS VII</h2><p><b>${PROFIL.sekolah}</b><br>Tahun Pelajaran 2026/2027<br><br>Disusun Oleh:<br><b>${PROFIL.namaGuru}</b><br>NIP. ${PROFIL.nipGuru}</p></div>
+<h1>MODUL AJAR DEEP LEARNING</h1><h1>MATA PELAJARAN : ${PROFIL.bidang.toUpperCase()}</h1><h2>${d.j.toUpperCase()}</h2>
+<div class="kotak"><b>KETERKAITAN DOKUMEN - TERINTEGRASI:</b> Modul ini disusun berdasarkan CP Nomor 46 Tahun 2025, dijabarkan dalam ${d.atp.length} ATP Bab ini, sesuai PROTA Semester ${d.sem} Tahun 2026/2027, dilaksanakan pada PROMES ${d.promes}, dan dinilai dengan KKTP Tuntas 66% (lihat Bagian G). Buku sumber: ${PROFIL.bidang} Kelas VII Edisi Revisi, hal. ${d.hal}.</div>
+<h3>A. IDENTITAS MODUL - TERINTEGRASI PROTA & PROMES</h3><div class="ident"><table><tr><td>Nama Sekolah</td><td>:</td><td><b>${PROFIL.sekolah}</b></td></tr><tr><td>Nama Penyusun</td><td>:</td><td><b>${PROFIL.namaGuru}</b></td></tr><tr><td>Mata Pelajaran</td><td>:</td><td><b>${PROFIL.bidang}</b></td></tr><tr><td>Kelas / Fase / Semester</td><td>:</td><td><b>${document.getElementById('kelas').value} / D / ${d.sem} (PROTA)</b></td></tr><tr><td>Alokasi Waktu</td><td>:</td><td><b>${d.jp} (PROTA)</b></td></tr><tr><td>Jadwal Pelaksanaan (PROMES)</td><td>:</td><td><b>${d.promes}</b></td></tr><tr><td>Tahun Pelajaran</td><td>:</td><td><b>2026 / 2027</b></td></tr><tr><td>Buku Sumber</td><td>:</td><td><b>${PROFIL.bidang} Kelas VII Edisi Revisi, hal. ${d.hal} - ${d.m}</b></td></tr><tr><td>Subtopik Buku</td><td>:</td><td><b>${sub.t} - hal. ${sub.hal} - ${sub.isi}</b></td></tr></table></div>
 <h3>B. IDENTIFIKASI KESIAPAN PESERTA DIDIK</h3><p>Peserta didik sudah memiliki pengetahuan awal sesuai subtopik ${sub.t} di buku hal. ${sub.hal}. Minat: wisata, kuliner, media sosial, fotografi, dongeng. Kebutuhan Belajar: Visual (gambar/video/pamflet), Auditori (diskusi & menyimak), Kinestetik (menulis, proyek, vlog).</p>
 <h3>C. KARAKTERISTIK MATERI PELAJARAN</h3><p><b>Konseptual & Prosedural:</b> ${d.m} - ${sub.isi} <b>Relevansi:</b> Relevan dengan kehidupan sehari-hari di Cipongkor. <b>Tingkat Kesulitan:</b> Sedang. <b>Struktur Materi:</b> Sesuai urutan Daftar Isi buku hal. ${d.hal}.</p>
 <h3>D. DIMENSI PROFIL LULUSAN</h3><p><b>Keimanan & Ketakwaan:</b> Mensyukuri ciptaan Tuhan. <b>Kewargaan:</b> Menghargai keragaman budaya Indonesia. <b>Penalaran Kritis:</b> Mengevaluasi informasi secara objektif. <b>Kreativitas:</b> Menghasilkan karya orisinal. <b>Kolaborasi:</b> Bekerja sama dalam kelompok. <b>Kemandirian:</b> Bertanggung jawab atas belajarnya. <b>Kesehatan:</b> Menjaga lingkungan. <b>Komunikasi:</b> Menyampaikan gagasan lisan & tulisan secara efektif & santun.</p>
@@ -410,7 +506,7 @@ document.getElementById('paper').innerHTML=`
 <h4>F. LANGKAH-LANGKAH PEMBELAJARAN BERDIFERENSIASI - SESUAI PROMES ${d.promes}</h4>${ph}
 <h4>G. ASESMEN PEMBELAJARAN - TERINTEGRASI KKTP & LKPD</h4><p><b>ASESMEN DIAGNOSTIK:</b> Tanya jawab awal + tabel Saya Sudah Tahu / Saya Belum Tahu. <b>ASESMEN FORMATIF:</b> Tanya jawab, diskusi kelompok, LKPD, observasi. <b>LKPD:</b> ${d.lkpd} - <b>Lihat LKPD lengkap di tombol LKPD, 1 LKPD untuk 1 Subtopik, 5 soal + kotak jawaban.</b> <b>ASESMEN SUMATIF:</b> Produk tulisan + presentasi kinerja + tes tertulis.</p><p><b>KKTP:</b></p><table><tr><th>Persentase</th><th>Kategori</th><th>Tindak Lanjut</th></tr><tr><td>0-40%</td><td>Belum Mencapai</td><td>Remidi total</td></tr><tr><td>41-65%</td><td>Belum Tuntas</td><td>Remidi sebagian</td></tr><tr><td>66-85%</td><td>Sudah Tuntas</td><td>Lanjut ke ATP berikutnya</td></tr><tr><td>86-100%</td><td>Sudah Tuntas</td><td>Pengayaan</td></tr></table><p><b>Batas Tuntas = 66%.</b></p>
 <div class="lampiran"><h4>LAMPIRAN: LKPD & RUBRIK - ${sub.t} - DINILAI DENGAN KKTP 66%</h4><p>${d.lkpd}</p><p><b>Soal LKPD Subtopik ini (lengkap di halaman LKPD):</b></p><ol>${sub.q.map(q=>`<li>${q}</li>`).join('')}</ol><table><tr><th>Aspek</th><th>Skor</th><th>Kriteria</th></tr><tr><td>Isi / Gagasan</td><td>40</td><td>Sesuai topik, lengkap, logis, kritis</td></tr><tr><td>Struktur</td><td>30</td><td>Sesuai struktur teks</td></tr><tr><td>Bahasa</td><td>20</td><td>Kata konkret, kalimat perincian, majas, santun</td></tr><tr><td>Ejaan & Kaidah</td><td>10</td><td>Huruf kapital, tanda baca, kata depan benar</td></tr><tr><td><b>Total</b></td><td><b>100</b></td><td>KKTP 66% = Tuntas, di bawah 66 = Remidi</td></tr></table><p>Nama Siswa: ............................ Kelas: ............ Nilai: ............ KKTP: ☐ Tuntas ☐ Remidi ☐ Pengayaan &nbsp; Paraf Guru: ............</p></div>
-<div class="ttd"><div>Mengetahui,<br>Kepala Sekolah<br><div class="garis"></div><b>Ading Rosidi, S.Pd</b><br>NIP. 196808101998021003</div><div>Cipongkor, ... Juli 2026<br>Guru Mata Pelajaran<br><div class="garis"></div><b>Hari Lasdiana, S.Pd</b><br>NIP. 1987041420252111118</div></div>`;
+<div class="ttd"><div>Mengetahui,<br>Kepala Sekolah<br><div class="garis"></div><b>${PROFIL.namaKepsek}</b><br>NIP. ${PROFIL.nipKepsek}</div><div>Cipongkor, ... Juli 2026<br>Guru Mata Pelajaran<br><div class="garis"></div><b>${PROFIL.namaGuru}</b><br>NIP. ${PROFIL.nipGuru}</div></div>`;
 document.getElementById('kelas').onchange=renderModul;
 }
 document.getElementById('babATP').innerHTML=BAB.map((b,i)=>`<option value="${i}">${b.j}</option>`).join('');
@@ -422,6 +518,7 @@ document.getElementById('jhBab').innerHTML=BAB.map(b=>`<option>${b.j} - ${b.m}</
 document.getElementById('jpBab').innerHTML=BAB.map(b=>`<option>${b.j} - ${b.m}</option>`).join('');
 document.getElementById('jhTanggal').value=new Date().toISOString().slice(0,10);
 document.getElementById('jpTanggal').value=new Date().toISOString().slice(0,10);
-renderCari();renderATP();renderSubOptions();renderModul();syncLKPDFromModul();renderKisi();renderBank();tampilJurnalHarian();tampilJurnalPelajaran();tampilBuku();
-['CP','ATP','PROTA','PROMES','KKTP'].forEach(b=>tampilFile(b));
+terapkanProfil();
+renderCari();renderATP();renderSubOptions();renderModul();syncLKPDFromModul();renderKisi();renderBank();tampilJurnalHarian();tampilJurnalPelajaran();
+['CP','ATP','PROTA','PROMES','KKTP','BUKU'].forEach(b=>tampilFile(b));
 </script></body></html>
