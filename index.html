@@ -36,7 +36,6 @@ body{font-family:'Times New Roman',Times,serif;font-size:12pt;margin:0;backgroun
 .upload{border:2px dashed #1565c0;border-radius:10px;padding:12px;margin-top:14px;background:#e3f2fd}
 .jurnal-form label{display:block;font-weight:bold;margin:10px 0 4px}.jurnal-form input,.jurnal-form select{margin-bottom:2px}
 .cover{text-align:center;padding:40px 20px;border:3px double #1565c0;border-radius:12px;background:linear-gradient(#e3f2fd,#fff);margin:16px auto}
-/* SPLASH PROFIL - TAMPILAN AWAL PROFESIONAL */
 #splash{position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0d47a1,#1565c0,#42a5f5);display:flex;align-items:center;justify-content:center;padding:16px;font-family:Arial}
 .splash-card{background:#fff;width:100%;max-width:520px;border-radius:18px;padding:22px;box-shadow:0 10px 30px #0005;max-height:92vh;overflow:auto}
 .splash-card h1{margin:0;text-align:center;color:#1565c0;font-size:20px}
@@ -60,7 +59,6 @@ body{background:#fff}
 }
 </style></head>
 <body>
-<!-- HALAMAN PROFIL AWAL - MUNCUL SEBELUM APLIKASI -->
 <div id="splash"><div class="splash-card">
 <h1>📚 PERANGKAT AJAR TERPADU</h1>
 <h2>BAHASA INDONESIA KELAS VII</h2>
@@ -75,7 +73,6 @@ body{background:#fff}
 <button class="btn-masuk" onclick="masukAplikasi()">✅ MASUK APLIKASI →</button>
 <p style="font-size:11px">Data ini hanya tersimpan di laptop / HP Ibu saja, tidak dikirim ke mana-mana.</p>
 </div></div>
-
 <div class="toolbar">
 <b>PERANGKAT AJAR TERPADU - <span class="txtBidang">BAHASA INDONESIA</span> KELAS 7 - <span class="txtSekolah">SMPN 2 CIPONGKOR</span></b><br>
 <button id="t1" class="on" onclick="show(1)">🔍 CARI TOPIK / BAB</button><button id="t2" onclick="show(2)">CP</button><button id="t3" onclick="show(3)">ATP</button><button id="t4" onclick="show(4)">PROTA</button><button id="t5" onclick="show(5)">PROMES</button><button id="t6" onclick="show(6)">KKTP</button><button id="t7" onclick="show(7)">📝 MODUL AJAR</button><button id="t8" onclick="show(8)">📄 LKPD</button><button id="t9" onclick="show(9)">📋 KISI-KISI</button><button id="t10" onclick="show(10)">🏦 BANK SOAL</button><button id="t11" onclick="show(11)">📓 JURNAL HARIAN</button><button id="t12" onclick="show(12)">📖 JURNAL PELAJARAN</button><button id="t13" onclick="show(13)">📚 BUKU ELEKTRONIK</button><button onclick="bukaProfil()" style="background:#ff9800;color:#fff">👤 UBAH PROFIL</button><br>
@@ -189,7 +186,6 @@ Jenis: <select id="jenisBank" onchange="renderBank()"><option value="pg">Pilihan
 </div>
 </div>
 <script>
-// ===== PROFIL GURU & KEPSEK - TERSIMPAN OTOMATIS =====
 let PROFIL = JSON.parse(localStorage.getItem('profilGuru')||'null') || {namaGuru:'Hari Lasdiana, S.Pd', nipGuru:'1987041420252111118', bidang:'Bahasa Indonesia', sekolah:'SMPN 2 Cipongkor', namaKepsek:'Sumaroto, M.Pd', nipKepsek:'197208211998031003'};
 function terapkanProfil(){
 document.querySelectorAll('.txtGuru').forEach(e=>e.textContent=PROFIL.namaGuru);
@@ -204,7 +200,7 @@ document.getElementById('inBidang').value=PROFIL.bidang;
 document.getElementById('inSekolah').value=PROFIL.sekolah;
 document.getElementById('inNamaKepsek').value=PROFIL.namaKepsek;
 document.getElementById('inNipKepsek').value=PROFIL.nipKepsek;
-renderModul();renderLKPD();renderKisi();renderBank();
+if(window.BAB){renderModul();renderLKPD();renderKisi();renderBank();}
 }
 function masukAplikasi(){
 let n=document.getElementById('inNamaGuru').value.trim();
@@ -216,8 +212,6 @@ terapkanProfil();
 document.getElementById('splash').style.display='none';
 }
 function bukaProfil(){ document.getElementById('splash').style.display='flex'; window.scrollTo(0,0); }
-// Kalau sudah pernah isi, langsung tampilkan profilnya tapi tetap bisa diubah lewat tombol UBAH PROFIL
-// Pertama kali buka tetap muncul splash agar terkesan profesional
 const BAB=[
 {j:"Bab 1: Jelajah Nusantara",m:"Teks Deskripsi",hal:"1-42",sem:"Ganjil",jp:"24 JP (6 kali pertemuan)",cp:"Menganalisis informasi teks deskripsi untuk makna tersurat & tersirat; menulis teks deskripsi secara logis, kritis, kreatif.",promes:"Juli - Agustus 2026, Minggu 1-6 Semester Ganjil",
 subs:[{t:"A. Memahami Isi Teks Deskripsi",hal:"4",isi:"Membaca teks Pantan Terong yang Instagramable, menemukan gagasan utama & pesan penulis.",q:["Jelaskan pengertian teks deskripsi!","Sebutkan ciri-ciri teks deskripsi!","Jelaskan tujuan teks deskripsi!","Tuliskan gagasan utama teks Pantan Terong hal. 4!","Apa pesan penulis dalam teks Pantan Terong? Jelaskan dengan bahasamu sendiri!"]},{t:"B. Memahami Unsur Bahasa dalam Teks Deskripsi",hal:"9",isi:"Kata konkret, kalimat perincian, majas personifikasi, sapaan di media sosial.",q:["Jelaskan pengertian kata konkret! Beri 3 contoh dari teks hal. 9!","Apa yang dimaksud kalimat perincian? Tulis 2 contohnya!","Jelaskan majas personifikasi! Tulis 2 contoh dari teks!","Mengapa penulis menggunakan sapaan akrab di media sosial?","Tulis 1 paragraf deskripsi tentang tempat favoritmu, gunakan kata konkret dan kalimat perincian!"]},{t:"C. Menganalisis Teks Deskripsi dalam Sajian Visual",hal:"16",isi:"Menganalisis pamflet wisata Papandayan & Green Canyon, kelengkapan & daya tarik visual.",q:["Sebutkan isi pamflet wisata Papandayan hal. 17!","Apa saja yang harus ada dalam pamflet wisata yang baik?","Bandingkan pamflet Papandayan dan Green Canyon! Mana yang lebih menarik? Mengapa?","Apa fungsi gambar / foto dalam pamflet wisata?","Buatlah pamflet wisata sederhana tentang tempat di Cipongkor!"]},{t:"D. Menganalisis Informasi Lisan",hal:"24",isi:"Menyimak 2 teks deskripsi lisan (berita vs vlog Wae Rebo), membandingkan tujuan & pandangan penutur.",q:["Apa perbedaan teks deskripsi lisan berita dan vlog?","Apa tujuan penutur dalam teks berita Wae Rebo?","Apa tujuan penutur dalam vlog Wae Rebo?","Bandingkan pilihan kata kedua penutur tersebut!","Menurutmu, teks mana yang lebih membuat orang ingin berkunjung? Mengapa?"]},{t:"E. Menyunting Teks Deskripsi",hal:"31",isi:"Tantangan Redaksi: menyunting ejaan, tanda baca, kata depan.",q:["Sebutkan 5 kesalahan ejaan yang kamu temukan dalam teks hal. 31!","Bagaimana cara menulis kata depan di / ke yang benar?","Perbaiki kalimat berikut: 'di mana rumah mu?'","Apa fungsi tanda koma dalam teks deskripsi?","Sunting paragraf hal. 31 hingga ejaannya benar semua!"]},{t:"F. Menyajikan Teks Deskripsi Sederhana",hal:"34",isi:"Proyek menulis & Galeri Wicara: presentasi teks deskripsi karya sendiri.",q:["Tulis kerangka teks deskripsi tentang benda favoritmu!","Kembangkan kerangka tersebut menjadi 3 paragraf!","Apa yang harus diperhatikan saat mempresentasikan teks deskripsi?","Tuliskan tanggapanmu untuk presentasi temanmu!","Apa hal yang paling kamu pelajari dari Bab Teks Deskripsi ini?"]}],
@@ -366,11 +360,29 @@ let d=BAB[+document.getElementById('bab').value];
 document.getElementById('subtopik').innerHTML=d.subs.map(s=>`<option value="${s.t}">${s.t} - hal. ${s.hal}</option>`).join('');
 }
 function renderATP(){let d=BAB[document.getElementById('babATP').value];document.getElementById('atpList').innerHTML=`<h4>${d.j} - ${d.m} | Buku hal. ${d.hal} | ${d.promes}</h4><ol>${d.atp.map((a,i)=>`<li><b>ATP ${i+1}:</b> ${a}</li>`).join('')}</ol>`;}
-function cetak(){show(7);renderModul();setTimeout(function(){window.print();},300);}
-function cetakLKPD(){show(8);renderLKPD();setTimeout(function(){window.print();},300);}
-function cetakKisi(){show(9);renderKisi();setTimeout(function(){window.print();},300);}
-function cetakBank(){show(10);renderBank();setTimeout(function(){window.print();},300);}
-function cetakSemua(){show(7);renderModul();renderLKPD();renderKisi();setTimeout(function(){window.print();},400);}
+function printHanya(htmlIsi, judul){
+let w = window.open('', '_blank');
+w.document.write(`<html><head><title>${judul}</title><style>
+body{font-family:'Times New Roman',Times,serif;font-size:12pt;margin:15mm;color:#000}
+table{width:100%;border-collapse:collapse} td,th{border:1px solid #000;padding:6px}
+h1,h2{font-size:12pt;text-align:center;text-transform:uppercase;margin:4px 0}
+.lkpd-header{background:#a8c686;border:2px solid #5a7a2a;border-radius:10px;text-align:center;padding:14px}
+.lkpd-header h1{font-size:14pt}.lkpd-header h2{font-size:13pt}.lkpd-header h3{font-size:12pt}
+.lkpd-jawab{border:2px solid #000;border-radius:14px;min-height:85px;margin:8px 0 16px;padding:10px}
+.lkpd-soal{font-weight:bold}
+.ttd{display:flex;justify-content:space-between;margin-top:28px;text-align:center}.ttd div{width:48%}.ttd .garis{border-bottom:1px solid #000;margin:48px 10px 4px}
+.cover{text-align:center;border:3px double #1565c0;padding:20px}
+@page{size:A4;margin:15mm}
+</style></head><body>${htmlIsi}<script>window.onload=function(){window.print();}<\/script></body></html>`);
+w.document.close();
+}
+function cetak(){ renderModul(); printHanya(document.getElementById('paper').innerHTML, 'MODUL AJAR - '+PROFIL.namaGuru); }
+function cetakLKPD(){ renderLKPD(); printHanya(document.getElementById('lkpdPaper').innerHTML, 'LKPD - '+PROFIL.namaGuru); }
+function cetakKisi(){ renderKisi(); printHanya(document.getElementById('kisiPaper').innerHTML, 'KISI-KISI - '+PROFIL.namaGuru); }
+function cetakBank(){ renderBank(); printHanya(document.getElementById('bankPaper').innerHTML, 'BANK SOAL - '+PROFIL.namaGuru); }
+function cetakSemua(){ renderModul(); renderLKPD(); renderKisi(); printHanya(document.getElementById('paper').innerHTML + '<div style="page-break-before:always"></div>' + document.getElementById('lkpdPaper').innerHTML + '<div style="page-break-before:always"></div>' + document.getElementById('kisiPaper').innerHTML, 'MODUL + LKPD + KISI-KISI'); }
+function cetakJurnalHarian(){ show(11); tampilJurnalHarian(); setTimeout(function(){window.print();},300); }
+function cetakJurnalPelajaran(){ show(12); tampilJurnalPelajaran(); setTimeout(function(){window.print();},300); }
 function syncLKPDFromModul(){
 document.getElementById('babLKPD').value=document.getElementById('bab').value;
 let d=BAB[+document.getElementById('babLKPD').value];
@@ -466,7 +478,6 @@ let arr=JSON.parse(localStorage.getItem('jurnalHarian')||'[]');
 document.getElementById('listJurnalHarian').innerHTML = arr.length==0 ? '<p>Belum ada jurnal. Isi di atas lalu klik SIMPAN.</p>' : arr.map((d,i)=>`<div style="border:1px solid #ddd;padding:10px;border-radius:10px;margin:6px 0;background:#f9f9f9"><b>${d.tgl} - ${d.kelas} - Jam ${d.jam}</b><br><b>${d.bab}</b><br>Materi: ${d.materi}<br>Hadir: ${d.hadir} | Tidak Hadir: ${d.tidak} (${d.namaTidak})<br>Catatan: ${d.catatan}<br>Tindak Lanjut: ${d.tindak} <br><a href="#" onclick="hapusJurnalHarian(${i});return false;" style="color:red">🗑️ Hapus</a></div>`).join('');
 }
 function hapusJurnalHarian(i){ if(!confirm('Hapus jurnal ini Bu?')) return; let arr=JSON.parse(localStorage.getItem('jurnalHarian')||'[]'); arr.splice(i,1); localStorage.setItem('jurnalHarian',JSON.stringify(arr)); tampilJurnalHarian(); }
-function cetakJurnalHarian(){ show(11); tampilJurnalHarian(); setTimeout(function(){window.print();},300); }
 function simpanJurnalPelajaran(){
 let d={tgl:document.getElementById('jpTanggal').value, kelas:document.getElementById('jpKelas').value, pert:document.getElementById('jpPert').value, bab:document.getElementById('jpBab').value, capai:document.getElementById('jpCapai').value, belum:document.getElementById('jpBelum').value, anak:document.getElementById('jpAnak').value, rencana:document.getElementById('jpRencana').value};
 if(!d.tgl||!d.capai){alert('Isi dulu Bu, Tanggal dan Apa yang Sudah Tercapai-nya.');return;}
@@ -477,7 +488,6 @@ let arr=JSON.parse(localStorage.getItem('jurnalPelajaran')||'[]');
 document.getElementById('listJurnalPelajaran').innerHTML = arr.length==0 ? '<p>Belum ada jurnal pelajaran.</p>' : arr.map((d,i)=>`<div style="border:1px solid #ddd;padding:10px;border-radius:10px;margin:6px 0;background:#fff8e1"><b>${d.tgl} - ${d.kelas} - ${d.pert}</b><br><b>${d.bab}</b><br>✅ Tercapai: ${d.capai}<br>❌ Belum Tuntas: ${d.belum}<br>👦 Perhatian Khusus: ${d.anak}<br>📝 Rencana Besok: ${d.rencana} <br><a href="#" onclick="hapusJurnalPelajaran(${i});return false;" style="color:red">🗑️ Hapus</a></div>`).join('');
 }
 function hapusJurnalPelajaran(i){ if(!confirm('Hapus jurnal ini Bu?')) return; let arr=JSON.parse(localStorage.getItem('jurnalPelajaran')||'[]'); arr.splice(i,1); localStorage.setItem('jurnalPelajaran',JSON.stringify(arr)); tampilJurnalPelajaran(); }
-function cetakJurnalPelajaran(){ show(12); tampilJurnalPelajaran(); setTimeout(function(){window.print();},300); }
 function renderModul(){
 let bi=+document.getElementById('bab').value;let d=BAB[bi];
 let simpanSub=document.getElementById('subtopik').value;
